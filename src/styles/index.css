@@ -1,0 +1,40 @@
+/* 1. PEHLE @import (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 2. PHIR @tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. PHIR @layer base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-custom {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding: 0 2rem;
+    }
+  }
+}
