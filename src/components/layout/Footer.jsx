@@ -122,7 +122,7 @@ const Footer = () => {
             {/* Book a Tour button */}
             <div className="col-span-2 md:col-span-1 flex md:justify-end">
               <Link to="/book-tour">
-                <button className="flex items-center gap-2 bg-[#c72a7a] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#b0256e] transition-colors shadow-sm whitespace-nowrap">
+                <button className="flex items-center gap-2 bg-[#c72a7a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#b0256e] transition-colors shadow-sm whitespace-nowrap">
                   <FaRegCalendarAlt className="text-sm" />
                   Book a Tour
                 </button>

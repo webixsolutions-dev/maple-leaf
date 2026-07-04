@@ -94,12 +94,12 @@ const Hero = () => {
             {/* Buttons */}
             <div className="mt-7 flex flex-wrap gap-3">
               <Link to="/book-tour">
-                <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-full shadow-sm transition-all font-montserrat">
+                <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition-all font-montserrat">
                   <FiCalendar /> Book a Tour
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="inline-flex items-center gap-2 border-2 border-[#c72a7a] text-[#c72a7a] font-semibold px-6 py-3 rounded-full hover:bg-pink-50 transition-all font-montserrat">
+                <button className="inline-flex items-center gap-2 border-2 border-[#c72a7a] text-[#c72a7a] font-semibold px-6 py-3 rounded-xl hover:bg-pink-50 transition-all font-montserrat">
                   <FiPhone /> Contact Us
                 </button>
               </Link>

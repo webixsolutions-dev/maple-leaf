@@ -196,12 +196,12 @@ const EnrollmentProcess = () => {
           
           <div className="flex flex-wrap gap-3 relative z-10">
             <Link to="/contact">
-              <button className="inline-flex items-center gap-2 border-2 border-[#c72a7a] text-[#c72a7a] font-semibold px-5 py-2.5 rounded-full hover:bg-[#c72a7a] hover:text-white transition-all font-montserrat text-sm">
+              <button className="inline-flex items-center gap-2 border-2 border-[#c72a7a] text-[#c72a7a] font-semibold px-5 py-2.5 rounded-xl hover:bg-[#c72a7a] hover:text-white transition-all font-montserrat text-sm">
                 <FiPhone /> Contact Us
               </button>
             </Link>
             <Link to="/book-tour">
-              <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-5 py-2.5 rounded-full transition-all font-montserrat text-sm shadow-md hover:shadow-lg">
+              <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-5 py-2.5 rounded-xl transition-all font-montserrat text-sm shadow-md hover:shadow-lg">
                 <FiCalendar /> Book a Tour
               </button>
             </Link>

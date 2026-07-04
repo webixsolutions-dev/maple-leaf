@@ -229,7 +229,7 @@ const Tuition = () => {
           </div>
           
           <Link to="/book-tour" className="relative z-10">
-            <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-full transition-all shadow-md hover:shadow-lg font-montserrat">
+            <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-md hover:shadow-lg font-montserrat">
               <FiCalendar /> Book a Tour
             </button>
           </Link>

@@ -98,7 +98,7 @@ const Navbar = () => {
           {/* Book a Tour Button - Right */}
           <div className="hidden md:block">
             <Link to="/book-tour">
-              <button className="bg-[#c72a7a] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#b0256e] transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+              <button className="bg-[#c72a7a] text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-[#b0256e] transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                 <FaCalendarCheck className="text-sm" />
                 Book a Tour
               </button>
@@ -154,7 +154,7 @@ const Navbar = () => {
                 </div>
               ))}
               <Link to="/book-tour" onClick={() => setIsOpen(false)}>
-                <button className="w-full bg-[#c72a7a] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#b0256e] transition-all mt-2 flex items-center justify-center gap-2">
+                <button className="w-full bg-[#c72a7a] text-white px-6 py-2.5 rounded-2xl font-semibold hover:bg-[#b0256e] transition-all mt-2 flex items-center justify-center gap-2">
                   <FaCalendarCheck className="text-sm" />
                   Book a Tour
                 </button>
