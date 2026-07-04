@@ -30,22 +30,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo - Only Image */}
+          {/* Logo - Left */}
           <Link to="/" className="flex-shrink-0">
             <img 
               src={logo} 
               alt="Maple Leaf Montessori Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-60 object-contain sm:h-16 sm:w-auto md:h-20 md:w-auto"
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Menu - Centered */}
+          <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
             {navLinks.map((link, index) => (
               <div key={index} className="relative group">
                 {link.dropdown ? (
                   <button
-                    className="flex items-center gap-1 text-gray-700 hover:text-pink-700 font-medium transition-colors duration-300 relative group"
+                    className="flex items-center gap-1 text-gray-700 hover:text-[#c72a7a] font-medium transition-colors duration-300 relative group"
                     onMouseEnter={() => setProgramsDropdown(true)}
                     onMouseLeave={() => setProgramsDropdown(false)}
                   >
@@ -53,18 +53,18 @@ const Navbar = () => {
                     <FaChevronDown className={`text-xs transition-transform duration-300 ${
                       programsDropdown ? 'rotate-180' : ''
                     }`} />
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-700 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
                   </button>
                 ) : (
                   <NavLink
                     to={link.path}
                     className={({ isActive }) =>
-                      `text-gray-700 hover:text-pink-700 font-medium transition-colors duration-300 relative group
-                      ${isActive ? 'text-pink-700' : ''}`
+                      `text-gray-700 hover:text-[#c72a7a] font-medium transition-colors duration-300 relative group
+                      ${isActive ? 'text-[#c72a7a]' : ''}`
                     }
                   >
                     {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-700 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
                   </NavLink>
                 )}
 
@@ -83,7 +83,7 @@ const Navbar = () => {
                       <Link
                         key={idx}
                         to={item.path}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors"
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-[#c72a7a] transition-colors"
                         onClick={() => setProgramsDropdown(false)}
                       >
                         {item.label}
@@ -93,19 +93,22 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            
+          </div>
+
+          {/* Book a Tour Button - Right */}
+          <div className="hidden md:block">
             <Link to="/book-tour">
-              <button className="bg-pink-700 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-pink-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+              <button className="bg-[#c72a7a] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#b0256e] transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                 <FaCalendarCheck className="text-sm" />
                 Book a Tour
               </button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Pink Color */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-2xl text-gray-700"
+            className="md:hidden text-2xl text-[#c72a7a] hover:text-[#b0256e] transition-colors"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -119,7 +122,7 @@ const Navbar = () => {
                 <div key={index}>
                   {link.dropdown ? (
                     <details className="group">
-                      <summary className="flex items-center justify-between cursor-pointer text-gray-700 hover:text-pink-700 font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50">
+                      <summary className="flex items-center justify-between cursor-pointer text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50">
                         {link.label}
                         <FaChevronDown className="text-xs group-open:rotate-180 transition-transform" />
                       </summary>
@@ -128,7 +131,7 @@ const Navbar = () => {
                           <Link
                             key={idx}
                             to={item.path}
-                            className="block text-sm text-gray-600 hover:text-pink-700 hover:bg-pink-50 px-3 py-2 rounded-lg transition-colors"
+                            className="block text-sm text-gray-600 hover:text-[#c72a7a] hover:bg-pink-50 px-3 py-2 rounded-lg transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {item.label}
@@ -140,8 +143,8 @@ const Navbar = () => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `block text-gray-700 hover:text-pink-700 font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50
-                        ${isActive ? 'text-pink-700 bg-pink-50' : ''}`
+                        `block text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50
+                        ${isActive ? 'text-[#c72a7a] bg-pink-50' : ''}`
                       }
                       onClick={() => setIsOpen(false)}
                     >
@@ -151,7 +154,7 @@ const Navbar = () => {
                 </div>
               ))}
               <Link to="/book-tour" onClick={() => setIsOpen(false)}>
-                <button className="w-full bg-pink-700 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-pink-800 transition-all mt-2 flex items-center justify-center gap-2">
+                <button className="w-full bg-[#c72a7a] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#b0256e] transition-all mt-2 flex items-center justify-center gap-2">
                   <FaCalendarCheck className="text-sm" />
                   Book a Tour
                 </button>

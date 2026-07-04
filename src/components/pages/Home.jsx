@@ -1,14 +1,15 @@
 import Hero from '../../components/home/Hero';
-// import AboutSection from '../../components/home/AboutSection';
-import WhyChooseUs from '../../components/home/WhyChooseUs';
-import LearningEnvironment from '../../components/home/LearnerEnvironment';
+import QuickInfo from '../../components/home/QuickInfo';
+import AdmissionsFees from '../home/AdmissionFees';
+
 
 const Home = () => {
   return (
     <div>
       <Hero />
-      <WhyChooseUs />
-      <LearningEnvironment />
+      <QuickInfo />
+      <AdmissionsFees/>
+    
     </div>
   );
 };

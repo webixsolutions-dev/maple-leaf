@@ -1,193 +1,151 @@
 import { Link } from 'react-router-dom';
-import { 
-  FaFacebook, 
-  FaInstagram, 
-  FaTwitter, 
-  FaYoutube,
-  FaPhone, 
-  FaEnvelope, 
-  FaMapMarkerAlt, 
+import logo from '../../assets/logo.png';
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
   FaClock,
   FaLeaf,
-  FaSun
+  FaRegCalendarAlt,
 } from 'react-icons/fa';
-import logo from '../../assets/logo.png';
+
+const quickLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Programs', to: '/programs' },
+  { label: 'Admissions', to: '/admissions' },
+  { label: 'Contact Us', to: '/contact' },
+];
+
+const programs = [
+  { label: 'Infant Program', to: '/programs/infant' },
+  { label: 'Toddler Program', to: '/programs/toddler' },
+  { label: 'Preschool / Casa', to: '/programs/preschool' },
+  { label: 'Before & After School Care', to: '/programs/after-school' },
+  { label: 'Summer Programs', to: '/programs/summer' },
+];
+
+const admissions = [
+  { label: 'Book a Tour', to: '/book-tour' },
+  { label: 'Enrollment Process', to: '/admissions' },
+  { label: 'Fees & Information', to: '/fees' },
+  { label: 'Parent Resources', to: '/admissions/resources' },
+  { label: 'FAQs', to: '/admissions/faqs' },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-pink-50 text-gray-700">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        
-        {/* Top Section - Logo & Description */}
-        <div className="mb-12 pb-8 border-b border-pink-200">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-            {/* Logo with Image */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-              <img 
-                src={logo} 
-                alt="Maple Leaf Montessori Logo" 
-                className="w-50 h-20 object-contain"
+    <footer>
+      {/* Top section */}
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-10">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-start">
+            {/* Logo */}
+            <div className="col-span-2 md:col-span-1 flex items-center gap-2">
+              <img
+                src={logo}
+                alt="Maple Leaf Montessori"
+                className="w-80 h-50 "
               />
              
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-gray-900 font-bold text-sm mb-3">Quick Links</h3>
+              <ul className="space-y-2">
+                {quickLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.to} className="text-sm text-gray-600 hover:text-[#c72a7a] transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Programs */}
+            <div>
+              <h3 className="text-gray-900 font-bold text-sm mb-3">Programs</h3>
+              <ul className="space-y-2">
+                {programs.map((p) => (
+                  <li key={p.label}>
+                    <Link to={p.to} className="text-sm text-gray-600 hover:text-[#c72a7a] transition-colors">
+                      {p.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Admissions */}
+            <div>
+              <h3 className="text-gray-900 font-bold text-sm mb-3">Admissions</h3>
+              <ul className="space-y-2">
+                {admissions.map((a) => (
+                  <li key={a.label}>
+                    <Link to={a.to} className="text-sm text-gray-600 hover:text-[#c72a7a] transition-colors">
+                      {a.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="text-gray-900 font-bold text-sm mb-3">Contact Info</h3>
+              <ul className="space-y-2.5">
+                <li className="flex items-start gap-2 text-sm text-gray-600">
+                  <FaMapMarkerAlt className="text-[#c72a7a] mt-0.5 shrink-0" />
+                  <span>
+                    1234 Maple Leaf Lane SW
+                    <br />
+                    Calgary, Alberta&nbsp;&nbsp;T2P 2M5
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-600">
+                  <FaPhone className="text-[#c72a7a] shrink-0" />
+                  (403) 555-0123
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-600">
+                  <FaEnvelope className="text-[#c72a7a] shrink-0" />
+                  hello@mapleleafmontessori.ca
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-600">
+                  <FaClock className="text-[#c72a7a] shrink-0" />
+                  Mon – Fri: 7:00 AM – 6:00 PM
+                </li>
+              </ul>
+            </div>
+
+            {/* Book a Tour button */}
+            <div className="col-span-2 md:col-span-1 flex md:justify-end">
+              <Link to="/book-tour">
+                <button className="flex items-center gap-2 bg-[#c72a7a] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#b0256e] transition-colors shadow-sm whitespace-nowrap">
+                  <FaRegCalendarAlt className="text-sm" />
+                  Book a Tour
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="bg-[#c72a7a] text-white/90">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs sm:text-sm">
+          <p>© 2025 Maple Leaf Montessori. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            
-            <p className="text-sm text-gray-600 max-w-md text-center md:text-left">
-              Nurturing young minds through authentic Montessori education in a safe, 
-              respectful, and inspiring environment.
-            </p>
+            <span>·</span>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Use
+            </Link>
           </div>
         </div>
-
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-pink-700 font-bold text-lg mb-4 font-serif">Quick Links</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Home</Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-pink-700 transition-colors text-sm text-gray-600">About Us</Link>
-              </li>
-              <li>
-                <Link to="/programs" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Programs</Link>
-              </li>
-              <li>
-                <Link to="/admissions" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Admissions</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Contact Us</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Programs */}
-          <div>
-            <h3 className="text-pink-700 font-bold text-lg mb-4 font-serif">Programs</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/programs/infant" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Infant Program (Phase 4)</Link>
-              </li>
-              <li>
-                <Link to="/programs/toddler" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Toddler Program (2 - 3 Years)</Link>
-              </li>
-              <li>
-                <Link to="/programs/preschool" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Preschool / Casa Program (3 - 6 Years)</Link>
-              </li>
-              <li>
-                <Link to="/programs/after-school" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Before & After School Care</Link>
-              </li>
-              <li>
-                <Link to="/programs/summer" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Summer Programs & Camps</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Admissions */}
-          <div>
-            <h3 className="text-pink-700 font-bold text-lg mb-4 font-serif">Admissions</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/admissions" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Enrollment Process</Link>
-              </li>
-              <li>
-                <Link to="/fees" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Fees & Rates</Link>
-              </li>
-              <li>
-                <Link to="/admissions/policies" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Policies</Link>
-              </li>
-              <li>
-                <Link to="/admissions/forms" className="hover:text-pink-700 transition-colors text-sm text-gray-600">Forms & Documents</Link>
-              </li>
-              <li>
-                <Link to="/admissions/faqs" className="hover:text-pink-700 transition-colors text-sm text-gray-600">FAQs</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Us */}
-          <div>
-            <h3 className="text-pink-700 font-bold text-lg mb-4 font-serif">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <FaPhone className="text-pink-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-600">(403) 555-0123</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaEnvelope className="text-pink-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-600">hello@mapleleafmontessori.ca</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-pink-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-600">123 Aspen Hills Drive SW<br />Calgary, AB T3H 0N1</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaClock className="text-pink-600 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-sm text-gray-600">Mon - Fri: 7:00 AM - 6:00 PM</span>
-                  <br />
-                  <span className="text-sm text-gray-400">Closed Weekends & Statutory Holidays</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Social Media & Copyright */}
-        <div className="mt-12 pt-8 border-t border-pink-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            
-            {/* Follow Us */}
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600 font-medium">Follow Us</span>
-              <div className="flex gap-2">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all duration-300 hover:scale-110 group"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram className="text-pink-600 group-hover:text-white transition-colors" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all duration-300 hover:scale-110 group"
-                  aria-label="Facebook"
-                >
-                  <FaFacebook className="text-pink-600 group-hover:text-white transition-colors" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all duration-300 hover:scale-110 group"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter className="text-pink-600 group-hover:text-white transition-colors" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all duration-300 hover:scale-110 group"
-                  aria-label="YouTube"
-                >
-                  <FaYoutube className="text-pink-600 group-hover:text-white transition-colors" />
-                </a>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center md:text-right">
-              <p className="text-sm text-gray-500">
-                © 2025 Maple Leaf Montessori |{' '}
-                <Link to="/privacy" className="hover:text-pink-700 transition-colors">Privacy Policy</Link>
-                {' | '}
-                <Link to="/terms" className="hover:text-pink-700 transition-colors">Terms of Use</Link>
-              </p>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </footer>
   );
