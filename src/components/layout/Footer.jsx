@@ -5,7 +5,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaClock,
-  FaLeaf,
   FaRegCalendarAlt,
 } from 'react-icons/fa';
 
@@ -37,7 +36,7 @@ const Footer = () => {
   return (
     <footer>
       {/* Top section */}
-      <div className="bg-white">
+      <div className=" bg-pink-50">
         <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-start">
             {/* Logo */}

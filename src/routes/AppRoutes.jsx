@@ -11,6 +11,12 @@ const BookTour = lazy(() => import("../components/pages/BookTour.jsx"));
 const ContactUs = lazy(() => import("../components/pages/ContactUs.jsx"));
 const Fees = lazy(() => import("../components/pages/Fees.jsx"));
 
+// import sub components of program
+import InfantProgram from '../components/pages/programs/InfantProgram.jsx';
+import ToddlerProgram from '../components/pages/programs/ToddlerProgram.jsx';
+import PreschoolProgram from '../components/pages/programs/PreschoolProgram.jsx';
+import AfterSchoolProgram from '../components/pages/programs/AfterSchoolProgram.jsx';
+import SummerProgram from '../components/pages/programs/SummerProgram.jsx';
 
 // Loading Component
 const PageLoader = () => (
@@ -131,7 +137,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Programs />
+                <InfantProgram />
               </AnimatedRoute>
             </Suspense>
           } 
@@ -142,7 +148,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Programs />
+                <ToddlerProgram />
               </AnimatedRoute>
             </Suspense>
           } 
@@ -153,7 +159,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Programs />
+                <PreschoolProgram />
               </AnimatedRoute>
             </Suspense>
           } 
@@ -164,7 +170,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Programs />
+                <AfterSchoolProgram />
               </AnimatedRoute>
             </Suspense>
           } 
@@ -175,7 +181,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Programs />
+                <SummerProgram />
               </AnimatedRoute>
             </Suspense>
           } 
@@ -187,7 +193,7 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
-                <Admissions />
+                <Programs />
               </AnimatedRoute>
             </Suspense>
           } 
