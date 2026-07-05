@@ -119,8 +119,8 @@ const rooms = [
 
 const Hero = () => {
   return (
-    <section className="font-montserrat relative overflow-hidden bg-white pt-10 md:pt-14 pb-14">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-10 md:space-y-12">
+    <section className="font-montserrat relative overflow-hidden bg-white pt-12 md:pt-14 pb-14">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-12 md:space-y-12">
 
         {/* ================= HERO BANNER ================= */}
         <motion.div
