@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaEnvelope, FaCalendarCheck } from 'react-icons/fa';
+import { FaCalendarCheck } from 'react-icons/fa';
+import HomeServiceIcon from './HomeServiceIcon';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -16,9 +17,11 @@ const HelpCTAStrip = () => (
   >
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-center">
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#c72a7a]">
-          <FaPhoneAlt className="text-lg" />
-        </div>
+        <HomeServiceIcon
+          src="/call.svg"
+          alt="Phone"
+          className="w-12 h-12 object-contain flex-shrink-0"
+        />
         <div>
           <h3 className="font-bold text-[#c72a7a] text-sm leading-snug">
             We&apos;re Here to Help
@@ -30,21 +33,25 @@ const HelpCTAStrip = () => (
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#c72a7a]">
-          <FaPhoneAlt className="text-lg" />
-        </div>
+        <HomeServiceIcon
+          src="/call.svg"
+          alt="Phone"
+          className="w-12 h-12 object-contain flex-shrink-0"
+        />
         <a href="tel:+14035421610" className="font-bold text-gray-900 text-sm hover:text-[#c72a7a] transition-colors">
           (403) 542-1610
         </a>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#c72a7a]">
-          <FaEnvelope className="text-lg" />
-        </div>
+      <div className="flex items-center gap-4 flex-nowrap">
+        <HomeServiceIcon
+          src="/mail.svg"
+          alt="Email"
+          className="w-12 h-12 object-contain flex-shrink-0"
+        />
         <a
           href="mailto:Mapleleafmontessori11@gmail.com"
-          className="font-bold text-gray-900 text-sm break-all hover:text-[#c72a7a] transition-colors"
+          className="font-bold text-gray-900 text-sm whitespace-nowrap hover:text-[#c72a7a] transition-colors"
         >
           Mapleleafmontessori11@gmail.com
         </a>

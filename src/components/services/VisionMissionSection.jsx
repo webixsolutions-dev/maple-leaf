@@ -46,6 +46,9 @@ const VisionMissionSection = () => (
         <p className="text-sm md:text-base text-[#1a2f4a] leading-relaxed">
           Our mission is to make a meaningful difference in the lives of individuals
           and families by providing safe, respectful, and dependable home-based services.
+          We are dedicated to meeting the changing needs of those we serve while promoting
+          independence, wellness, dignity, and a strong sense of belonging within the
+          home and community.
         </p>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import HomeCleaningHero from '../../services/homecleaning/HomeCleaningHero';
 import HomeCleaningServicesGrid from '../../services/homecleaning/HomeCleaningServicesGrid';
-import CleanerHomeSection from '../../services/homecleaning/CleanerHomeSection';
 import HelpCTAStrip from '../../services/HelpCTAStrip';
 
 const HomeCleaningServices = () => (
@@ -8,7 +7,6 @@ const HomeCleaningServices = () => (
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-12 md:space-y-14">
       <HomeCleaningHero />
       <HomeCleaningServicesGrid />
-      <CleanerHomeSection />
       <HelpCTAStrip />
     </div>
   </div>

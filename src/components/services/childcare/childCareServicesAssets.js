@@ -13,11 +13,8 @@ export const CHILD_CARE_ICONS = {
 };
 
 export const CHILD_CARE_IMAGES = {
-  hero: ['/childcareservices/hero.png', '/personalcareservices/hero.png'],
-  happyChildren: [
-    '/childcareservices/happychildren.png',
-    '/personalcareservices/happychildren.png',
-  ],
+  hero: '/childhero.webp',
+  happyChildren: '/happychild.webp',
 };
 
 export const SERVICE_PHOTO_RADIUS =
