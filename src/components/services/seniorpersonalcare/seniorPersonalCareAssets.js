@@ -7,8 +7,8 @@ export const SENIOR_PERSONAL_CARE_ICONS = {
 };
 
 export const SENIOR_PERSONAL_CARE_IMAGES = {
-  hero: ['/seniorpersonalcare/hero.png'],
-  comfortHands: ['/seniorpersonalcare/comfort-hands.png'],
+  hero: '/herosenior.webp',
+  comfort: '/comfort.webp',
 };
 
 export { SERVICE_PHOTO_RADIUS } from '../childcare/childCareServicesAssets';
