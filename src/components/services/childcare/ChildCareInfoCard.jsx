@@ -17,7 +17,7 @@ const ChildCareInfoCard = ({ title, description, icon, alt, color, index }) => (
       src={icon}
       alt={alt}
       color={color}
-      className="w-14 h-14 mb-4"
+      className="w-16 h-16 sm:w-20 sm:h-20 mb-4"
     />
     <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2">{title}</h3>
     <p className="text-xs text-gray-600 leading-relaxed">{description}</p>

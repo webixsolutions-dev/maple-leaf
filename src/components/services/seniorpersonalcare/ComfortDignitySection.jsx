@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import HomeServiceIcon from '../HomeServiceIcon';
 import { HOME_SERVICE_ICONS } from '../homeServicesAssets';
-import { CHILD_CARE_IMAGES, SERVICE_PHOTO_RADIUS } from './childCareServicesAssets';
-import ServicePhoto from './ServicePhoto';
+import ServicePhoto from '../childcare/ServicePhoto';
+import { SENIOR_PERSONAL_CARE_IMAGES, SERVICE_PHOTO_RADIUS } from './seniorPersonalCareAssets';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -10,7 +10,7 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-const HappyChildrenSection = () => (
+const ComfortDignitySection = () => (
   <motion.section
     {...fadeUp}
     transition={{ duration: 0.6 }}
@@ -25,19 +25,19 @@ const HappyChildrenSection = () => (
             className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
           />
           <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">
-            Happy Children. Peace of Mind.
+            Comfort, Dignity & Independence
           </h2>
         </div>
         <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-          We provide trusted, professional care so your children feel safe,
-          supported, and loved — right at home.
+          We support your loved ones with compassionate care, helping them live
+          safely and comfortably at home.
         </p>
       </div>
 
       <ServicePhoto
-        src={CHILD_CARE_IMAGES.happyChildren}
-        alt="Child hugging a teddy bear"
-        label="Child hugging a teddy bear"
+        src={SENIOR_PERSONAL_CARE_IMAGES.comfortHands}
+        alt="Caregiver holding elderly person's hand"
+        label="Caregiver holding elderly person's hand"
         aspectRatio="4/3"
         rounded={SERVICE_PHOTO_RADIUS}
         className="w-full"
@@ -46,4 +46,4 @@ const HappyChildrenSection = () => (
   </motion.section>
 );
 
-export default HappyChildrenSection;
+export default ComfortDignitySection;

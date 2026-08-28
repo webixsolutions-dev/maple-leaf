@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const colorClasses = {
-  pink: 'bg-pink-100 border-pink-200 text-pink-400',
-  green: 'bg-green-100 border-green-200 text-green-500',
-  purple: 'bg-purple-100 border-purple-200 text-purple-500',
-  orange: 'bg-amber-100 border-amber-200 text-amber-500',
-  blue: 'bg-sky-100 border-sky-200 text-sky-500',
+  pink: 'bg-pink-400 border-pink-400 text-white',
+  green: 'bg-green-500 border-green-500 text-white',
+  purple: 'bg-purple-500 border-purple-500 text-white',
+  orange: 'bg-orange-400 border-orange-400 text-white',
+  blue: 'bg-sky-500 border-sky-500 text-white',
 };
 
 const IconPlaceholder = ({
@@ -16,26 +16,31 @@ const IconPlaceholder = ({
   alt = '',
   className = '',
 }) => {
-  const [hasError, setHasError] = useState(false);
+  const sources = Array.isArray(src) ? src.filter(Boolean) : src ? [src] : [];
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const currentSrc = sources[sourceIndex];
 
-  if (src && !hasError) {
+  if (currentSrc) {
     return (
       <img
-        src={src}
+        src={currentSrc}
         alt={alt}
         className={`object-contain flex-shrink-0 ${className}`}
         style={className ? undefined : { width: size, height: size }}
         loading="lazy"
-        onError={() => setHasError(true)}
+        onError={() => setSourceIndex((index) => index + 1)}
       />
     );
   }
 
-  const colorClass = color ? colorClasses[color] : 'bg-gray-50 border-gray-300 text-gray-400';
+  const colorClass = color
+    ? colorClasses[color]
+    : 'bg-gray-50 border-gray-300 text-gray-400';
+  const borderStyle = color ? 'border-2' : 'border-2 border-dashed';
 
   return (
     <div
-      className={`flex items-center justify-center border-2 border-dashed text-xs font-medium flex-shrink-0 ${
+      className={`flex items-center justify-center ${borderStyle} text-xs font-medium flex-shrink-0 ${
         shape === 'circle' ? 'rounded-full' : 'rounded-lg'
       } ${colorClass} ${className}`}
       style={className ? undefined : { width: size, height: size }}

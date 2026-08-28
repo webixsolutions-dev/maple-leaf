@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import HomeServiceIcon from '../HomeServiceIcon';
 import { HOME_SERVICE_ICONS } from '../homeServicesAssets';
-import { CHILD_CARE_IMAGES, SERVICE_PHOTO_RADIUS } from './childCareServicesAssets';
-import ServicePhoto from './ServicePhoto';
+import ServicePhoto from '../childcare/ServicePhoto';
+import { HOME_CLEANING_IMAGES, SERVICE_PHOTO_RADIUS } from './homeCleaningServicesAssets';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -10,7 +10,7 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-const HappyChildrenSection = () => (
+const CleanerHomeSection = () => (
   <motion.section
     {...fadeUp}
     transition={{ duration: 0.6 }}
@@ -25,19 +25,19 @@ const HappyChildrenSection = () => (
             className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
           />
           <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">
-            Happy Children. Peace of Mind.
+            A Cleaner Home. A Healthier You.
           </h2>
         </div>
         <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-          We provide trusted, professional care so your children feel safe,
-          supported, and loved — right at home.
+          Professional cleaning services you can trust, so you can focus on what
+          matters most.
         </p>
       </div>
 
       <ServicePhoto
-        src={CHILD_CARE_IMAGES.happyChildren}
-        alt="Child hugging a teddy bear"
-        label="Child hugging a teddy bear"
+        src={HOME_CLEANING_IMAGES.cleanerHome}
+        alt="Bright living room with sofa and plants"
+        label="Bright living room with sofa and plants"
         aspectRatio="4/3"
         rounded={SERVICE_PHOTO_RADIUS}
         className="w-full"
@@ -46,4 +46,4 @@ const HappyChildrenSection = () => (
   </motion.section>
 );
 
-export default HappyChildrenSection;
+export default CleanerHomeSection;

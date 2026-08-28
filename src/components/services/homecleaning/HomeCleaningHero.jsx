@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import HomeServiceIcon from '../HomeServiceIcon';
 import { HOME_SERVICE_ICONS } from '../homeServicesAssets';
-import { CHILD_CARE_IMAGES, SERVICE_PHOTO_RADIUS } from './childCareServicesAssets';
-import ServicePhoto from './ServicePhoto';
+import { HOME_CLEANING_IMAGES, SERVICE_PHOTO_RADIUS } from './homeCleaningServicesAssets';
+import ServicePhoto from '../childcare/ServicePhoto';
 
-const ChildCareHero = () => (
+const HomeCleaningHero = () => (
   <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white rounded-3xl">
     <div className="grid md:grid-cols-2 items-center gap-8">
       <motion.div
@@ -33,7 +33,7 @@ const ChildCareHero = () => (
         </p>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900">
-          Child Care{' '}
+          Home Cleaning{' '}
           <span className="text-[#e0115f] inline-flex items-center gap-3 flex-wrap">
             Services
             <HomeServiceIcon
@@ -45,8 +45,7 @@ const ChildCareHero = () => (
         </h1>
 
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-4 max-w-md">
-          Safe, nurturing, and engaging care for your children, helping them learn,
-          grow, and thrive.
+          A clean and healthy home for your peace of mind.
         </p>
       </motion.div>
 
@@ -57,9 +56,9 @@ const ChildCareHero = () => (
         className="p-6 sm:p-8 lg:p-10 md:pl-0"
       >
         <ServicePhoto
-          src={CHILD_CARE_IMAGES.hero}
-          alt="Caregiver playing blocks with a child"
-          label="Caregiver playing blocks with child"
+          src={HOME_CLEANING_IMAGES.hero}
+          alt="Caregiver wiping down a countertop"
+          label="Caregiver wiping down a countertop"
           aspectRatio="16/10"
           rounded={SERVICE_PHOTO_RADIUS}
           className="w-full"
@@ -69,4 +68,4 @@ const ChildCareHero = () => (
   </section>
 );
 
-export default ChildCareHero;
+export default HomeCleaningHero;
