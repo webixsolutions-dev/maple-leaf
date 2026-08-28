@@ -6,8 +6,6 @@ export const HOME_CLEANING_ICONS = {
 };
 
 export const HOME_CLEANING_IMAGES = {
-  hero: ['/homecleaningservices/hero.png'],
-  cleanerHome: ['/homecleaningservices/cleaner-home.png', '/homecleaningservices/livingroom.png'],
+  hero: '/homecleaning.webp',
+  cleanerHome: '/cleanerhome.webp',
 };
-
-export { SERVICE_PHOTO_RADIUS } from '../childcare/childCareServicesAssets';
