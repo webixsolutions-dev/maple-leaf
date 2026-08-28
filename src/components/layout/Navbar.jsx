@@ -10,6 +10,7 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
+    { path: '/our-services', label: 'Our Services' },
     { 
       label: 'Programs', 
       dropdown: true,

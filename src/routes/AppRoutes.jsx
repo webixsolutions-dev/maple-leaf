@@ -10,6 +10,10 @@ const Admissions = lazy(() => import("../components/pages/Admission.jsx"));
 const BookTour = lazy(() => import("../components/pages/BookTour.jsx"));
 const ContactUs = lazy(() => import("../components/pages/ContactUs.jsx"));
 const Fees = lazy(() => import("../components/pages/Fees.jsx"));
+const OurServices = lazy(() => import("../components/pages/OurServices.jsx"));
+const ChildCareServices = lazy(() => import("../components/pages/services/ChildCareServices.jsx"));
+const SeniorPersonalCare = lazy(() => import("../components/pages/services/SeniorPersonalCare.jsx"));
+const HomeCleaningServices = lazy(() => import("../components/pages/services/HomeCleaningServices.jsx"));
 
 // import sub components of program
 import InfantProgram from '../components/pages/programs/InfantProgram.jsx';
@@ -126,6 +130,50 @@ const AppRoutes = () => {
             <Suspense fallback={<PageLoader />}>
               <AnimatedRoute>
                 <Fees />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+
+        <Route 
+          path="/our-services" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <OurServices />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+
+        <Route 
+          path="/our-services/child-care" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <ChildCareServices />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+
+        <Route 
+          path="/our-services/senior-personal-care" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <SeniorPersonalCare />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+
+        <Route 
+          path="/our-services/home-cleaning" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <HomeCleaningServices />
               </AnimatedRoute>
             </Suspense>
           } 
