@@ -37,7 +37,7 @@ const SeniorPersonalCareHero = () => (
           <span className="text-[#e0115f] inline-flex items-center gap-3 flex-wrap">
             Care
             <HomeServiceIcon
-              src={HOME_SERVICE_ICONS.ourVision}
+              src={HOME_SERVICE_ICONS.right}
               alt=""
               className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
             />

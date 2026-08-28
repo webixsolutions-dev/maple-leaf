@@ -57,13 +57,13 @@ const SeniorPersonalCareServicesGrid = () => (
     >
       <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 inline-flex items-center gap-3 flex-wrap justify-center">
         <HomeServiceIcon
-          src={HOME_SERVICE_ICONS.ourVision}
+          src={HOME_SERVICE_ICONS.left}
           alt=""
           className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
         />
         Our Senior & Personal Care Services
         <HomeServiceIcon
-          src={HOME_SERVICE_ICONS.ourVision}
+          src={HOME_SERVICE_ICONS.right}
           alt=""
           className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
         />

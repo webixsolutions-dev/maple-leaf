@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import HomeServiceIcon from './HomeServiceIcon';
-import { HOME_SERVICE_ICONS } from './homeServicesAssets';
+import { HOME_SERVICE_ICONS, HOME_SERVICE_IMAGES } from './homeServicesAssets';
 import ServiceCard from './ServiceCard';
 
 const fadeUp = {
@@ -13,18 +13,21 @@ const services = [
   {
     title: 'Child Care Services',
     description: 'Nurturing, safe and reliable care for your little ones.',
+    image: HOME_SERVICE_IMAGES.childCare,
     imageLabel: 'Caregiver playing with child',
     to: '/our-services/child-care',
   },
   {
     title: 'Senior & Personal Care',
     description: 'Compassionate care for seniors and individuals.',
+    image: HOME_SERVICE_IMAGES.seniorPersonalCare,
     imageLabel: 'Caregiver with elderly woman',
     to: '/our-services/senior-personal-care',
   },
   {
     title: 'Home Cleaning Services',
     description: 'A clean and healthy home for your peace of mind.',
+    image: HOME_SERVICE_IMAGES.homeCleaning,
     imageLabel: 'Caregiver cleaning a home',
     to: '/our-services/home-cleaning',
   },
@@ -39,13 +42,13 @@ const ServicesGrid = () => (
     >
       <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 inline-flex items-center gap-3 flex-wrap justify-center">
         <HomeServiceIcon
-          src={HOME_SERVICE_ICONS.ourVision}
+          src={HOME_SERVICE_ICONS.left}
           alt=""
           className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
         />
         Our Homecare Services
         <HomeServiceIcon
-          src={HOME_SERVICE_ICONS.ourVision}
+          src={HOME_SERVICE_ICONS.right}
           alt=""
           className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
         />
