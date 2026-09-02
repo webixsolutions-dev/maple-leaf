@@ -32,8 +32,8 @@ const programs = [
     cardBg: 'bg-pink-50',
     border: 'border-pink-100',
     ageColor: 'text-pink-600',
-    image:
-      'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&q=80',
+    image: '/infant.webp',
+    objectPosition: 'object-top',
   },
   {
     icon: <FaChild />,
@@ -256,7 +256,7 @@ const ProgramsPage = () => {
                   src={program.image}
                   alt={program.title}
                   loading="lazy"
-                  className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-28 object-cover ${program.objectPosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                 />
               </div>
 

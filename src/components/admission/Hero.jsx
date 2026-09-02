@@ -115,7 +115,7 @@ const Hero = () => {
           >
             <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center relative">
               <img
-                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=600&fit=crop"
+                src="/admissions.webp"
                 alt="Maple Leaf Montessori"
                 className="w-full h-full object-cover"
               />
