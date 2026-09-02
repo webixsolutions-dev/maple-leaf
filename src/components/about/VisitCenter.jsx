@@ -12,7 +12,7 @@ const VisitCentre = () => {
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[220px] lg:min-h-[300px]">
           <img
-            src="https://images.unsplash.com/photo-1567746455504-cb3213f8f5b8?w=900&q=80"
+            src="/visitcalgory.webp"
             alt="Maple Leaf Montessori classroom in Calgary"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
