@@ -61,7 +61,7 @@ const HeroBanner = () => {
         {/* Right image */}
         <div className="relative min-h-[240px] md:min-h-[340px]">
           <img
-            src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80"
+            src="/aboutus.webp"
             alt="Educator guiding children at Maple Leaf Montessori"
             className="absolute inset-0 w-full h-full object-cover md:rounded-l-[60px]"
           />

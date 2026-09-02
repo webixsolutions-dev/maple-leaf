@@ -35,8 +35,8 @@ const programs = [
     cardBg: 'bg-amber-50',
     border: 'border-amber-100',
     linkColor: 'text-amber-500 hover:text-amber-600',
-    image:
-      'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80',
+    image: '/infant.webp',
+    objectPosition: 'object-top',
   },
   {
     icon: <FaShapes />,
@@ -217,7 +217,7 @@ const Programs = () => {
                   src={program.image}
                   alt={program.title}
                   loading="lazy"
-                  className="w-full h-full object-cover [mask-image:linear-gradient(to_right,transparent,black_35%)] group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${program.objectPosition || 'object-center'} [mask-image:linear-gradient(to_right,transparent,black_35%)] group-hover:scale-105 transition-transform duration-500`}
                 />
               </div>
             </motion.div>
