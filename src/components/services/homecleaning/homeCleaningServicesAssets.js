@@ -6,7 +6,7 @@ export const HOME_CLEANING_ICONS = {
 };
 
 export const HOME_CLEANING_IMAGES = {
-  hero: '/homecleaning.webp',
+  hero: '/girlclean.webp',
   maidServices: '/cleaning/maid_services.webp',
   houseCleaning: '/cleaning/house_cleaning.webp',
   carpetCleaning: '/cleaning/carpet_cleaning.webp',
