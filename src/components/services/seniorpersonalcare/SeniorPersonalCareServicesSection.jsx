@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import HomeServiceIcon from '../HomeServiceIcon';
 import { HOME_SERVICE_ICONS } from '../homeServicesAssets';
 import { SENIOR_PERSONAL_CARE_SERVICES } from '../serviceDetailsData';
 import ChildCareInfoCard from '../childcare/ChildCareInfoCard';
 import { SENIOR_CARE_COLORS } from './seniorPersonalCareAssets';
-import SeniorCareDetailPanel from './SeniorCareDetailPanel';
+import SeniorCareAccordion from './SeniorCareAccordion';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -14,24 +14,24 @@ const fadeUp = {
 };
 
 const SeniorPersonalCareServicesSection = () => {
-  const [openId, setOpenId] = useState(null);
-  const panelRef = useRef(null);
-  const openService =
-    SENIOR_PERSONAL_CARE_SERVICES.find((service) => service.id === openId) ?? null;
+  const [openId, setOpenId] = useState('companionship');
 
-  const handleLearnMore = (id) => {
-    setOpenId((current) => (current === id ? null : id));
+  const scrollToService = (id) => {
+    window.setTimeout(() => {
+      document
+        .getElementById(`senior-care-${id}`)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 150);
   };
 
-  useEffect(() => {
-    if (openId && panelRef.current) {
-      const timer = window.setTimeout(() => {
-        panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 150);
+  const handleLearnMore = (id) => {
+    setOpenId(id);
+    scrollToService(id);
+  };
 
-      return () => window.clearTimeout(timer);
-    }
-  }, [openId]);
+  const handleToggle = (id) => {
+    setOpenId((current) => (current === id ? null : id));
+  };
 
   return (
     <section>
@@ -69,7 +69,7 @@ const SeniorPersonalCareServicesSection = () => {
                   isOpen={openId === service.id}
                   onLearnMore={() => handleLearnMore(service.id)}
                   colorMap={SENIOR_CARE_COLORS}
-                  detailsId="senior-care-details"
+                  detailsId={`senior-care-${service.id}`}
                 />
               </div>
             ))}
@@ -77,10 +77,10 @@ const SeniorPersonalCareServicesSection = () => {
         </div>
       </div>
 
-      <SeniorCareDetailPanel
-        ref={panelRef}
-        service={openService}
-        onClose={() => setOpenId(null)}
+      <SeniorCareAccordion
+        services={SENIOR_PERSONAL_CARE_SERVICES}
+        openId={openId}
+        onToggle={handleToggle}
       />
     </section>
   );
