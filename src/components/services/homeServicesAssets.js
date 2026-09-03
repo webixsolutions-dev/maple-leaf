@@ -11,7 +11,7 @@ export const HOME_SERVICE_ICONS = {
 export const HOME_SERVICE_IMAGES = {
   heroBackground: '/heroservices.webp',
   visionMissionBackground: '/visionmission.webp',
-  childCare: '/childcare.webp',
-  seniorPersonalCare: '/seniorandpersonalcare.webp',
-  homeCleaning: '/house_cleaning.webp',
+  childCare: '/servicespage/child.webp',
+  seniorPersonalCare: '/servicespage/senior.webp',
+  homeCleaning: '/servicespage/clean.webp',
 };
