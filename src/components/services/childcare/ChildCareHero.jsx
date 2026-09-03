@@ -30,7 +30,7 @@ const ChildCareHero = () => (
           alt=""
           className="w-5 h-5 object-contain"
         />
-        Trusted care in the comfort of Home.
+        Trusted care in the comfort of home.
       </p>
 
       <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">

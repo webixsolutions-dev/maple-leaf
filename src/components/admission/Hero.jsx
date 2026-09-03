@@ -29,7 +29,7 @@ const Hero = () => {
     },
     {
       icon: FiClock,
-      title: 'Open Mon–Fri 7:00 AM–6:00 PM',
+      title: 'Open Mon–Fri 9:00 AM–5:00 PM',
       body: 'Full-day care with part-time options available.',
       color: 'text-orange-500',
       bg: 'bg-orange-50'
@@ -80,7 +80,7 @@ const Hero = () => {
             {/* Description */}
             <p className="mt-5 text-gray-600 leading-relaxed max-w-md font-montserrat">
               Maple Leaf Montessori is a licensed Montessori daycare in Calgary, open
-              Monday–Friday from 7:00 AM to 6:00 PM, and caring for children ages 15
+              Monday–Friday from 9:00 AM to 5:00 PM, and caring for children ages 15
               months to 6 years.
             </p>
             <p className="mt-3 text-gray-600 leading-relaxed max-w-md font-montserrat">

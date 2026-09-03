@@ -35,7 +35,7 @@ const programsData = {
     title: 'Infant Program (Phase 4)',
     ageRange: '6 – 18 Months',
     ratio: '1 : 3 Educator Ratio',
-    hours: 'Mon – Fri · 7:00 AM – 6:00 PM',
+    hours: 'Mon – Fri · 9:00 AM – 5:00 PM',
     heroDescription:
       'Our infant room is a calm, nurturing space where your baby\u2019s earliest discoveries are met with warmth, patience, and individual attention. Every routine — feeding, napping, play — follows your child\u2019s own rhythm.',
     overview:
@@ -93,7 +93,7 @@ const programsData = {
     title: 'Toddler Program',
     ageRange: '2 – 3 Years',
     ratio: '1 : 5 Educator Ratio',
-    hours: 'Mon – Fri · 7:00 AM – 6:00 PM',
+    hours: 'Mon – Fri · 9:00 AM – 5:00 PM',
     heroDescription:
       'Toddlers are busy, curious, and eager for independence. Our toddler community channels that wonderful energy into purposeful activity — pouring, climbing, singing, and the very first "I did it myself!" moments.',
     overview:
@@ -152,7 +152,7 @@ const programsData = {
     title: 'Preschool / Montessori Casa',
     ageRange: '2.5 – 6 Years',
     ratio: '1 : 8 Educator Ratio',
-    hours: 'Mon – Fri · 7:00 AM – 6:00 PM',
+    hours: 'Mon – Fri · 9:00 AM – 5:00 PM',
     heroDescription:
       'In our Casa classroom, children choose meaningful work from a beautifully prepared environment — mastering letters and numbers, caring for their classroom, and discovering the joy of learning at their own pace.',
     overview:
@@ -210,7 +210,7 @@ const programsData = {
     title: 'Before & After School Care',
     ageRange: '4 – 12 Years',
     ratio: '1 : 13 Educator Ratio',
-    hours: 'Before School 7:00 – 9:00 AM · After School 3:30 – 6:00 PM',
+    hours: 'Mon – Fri · 9:00 AM – 5:00 PM',
     heroDescription:
       'A safe, welcoming place for school-age children to start the day calmly and unwind after the bell — with homework help, healthy snacks, clubs, and plenty of time to just be a kid.',
     overview:
@@ -265,7 +265,7 @@ const programsData = {
     title: 'Summer Programs & Camps',
     ageRange: '2.5 – 12 Years',
     ratio: 'Age-Based Group Ratios',
-    hours: 'Mon – Fri · 7:00 AM – 6:00 PM · Weekly Sessions (July & August)',
+    hours: 'Mon – Fri · 9:00 AM – 5:00 PM · Weekly Sessions (July & August)',
     heroDescription:
       'Splash days, nature hikes, science experiments, and new friendships — our weekly themed summer camps keep children active, curious, and smiling all summer long.',
     overview:

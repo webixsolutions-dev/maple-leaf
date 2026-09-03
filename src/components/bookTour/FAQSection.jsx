@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaSun, FaLeaf, FaPhoneAlt, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import { faqs, fadeUp } from '../data/bookTourData';
+import { CONTACT } from '../data/contactInfo';
 
 const FAQSection = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -46,7 +47,7 @@ const FAQSection = () => {
           <FaLeaf className="text-green-500" />
           <span>Still have questions? We're happy to help!</span>
           <a
-            href="tel:+14035550123"
+            href={`tel:${CONTACT.phoneTel}`}
             className="inline-flex items-center gap-1.5 text-[#e0115f] font-semibold underline underline-offset-2"
           >
             <FaPhoneAlt className="text-[10px]" />

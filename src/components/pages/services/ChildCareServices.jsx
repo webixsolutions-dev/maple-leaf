@@ -9,7 +9,7 @@ const ChildCareServices = () => (
       <ChildCareHero />
       <ChildCareServicesGrid />
       <HappyChildrenSection />
-      <HelpCTAStrip />
+      <HelpCTAStrip variant="pink" />
     </div>
   </div>
 );

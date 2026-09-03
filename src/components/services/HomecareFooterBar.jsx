@@ -1,9 +1,10 @@
-import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaEnvelope } from 'react-icons/fa';
+import { CONTACT } from '../data/contactInfo';
 
 const socialLinks = [
-  { label: 'Instagram', href: '#', Icon: FaInstagram },
-  { label: 'Facebook', href: '#', Icon: FaFacebookF },
-  { label: 'YouTube', href: '#', Icon: FaYoutube },
+  { label: 'Instagram', href: CONTACT.instagram, Icon: FaInstagram },
+  { label: 'Facebook', href: CONTACT.facebook, Icon: FaFacebookF },
+  { label: 'Email', href: `mailto:${CONTACT.email}`, Icon: FaEnvelope, external: false },
 ];
 
 const HomecareFooterBar = () => (
@@ -21,10 +22,13 @@ const HomecareFooterBar = () => (
       </p>
 
       <div className="absolute right-3 top-1/2 z-10 flex -translate-y-1/2 items-center gap-1.5 sm:right-5 sm:gap-2">
-        {socialLinks.map(({ label, href, Icon }) => (
+        {socialLinks.map(({ label, href, Icon, external = true }) => (
           <a
             key={label}
             href={href}
+            {...(external
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : {})}
             aria-label={label}
             className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#c72a7a] text-white transition-colors hover:bg-[#b0256e] sm:h-8 sm:w-8"
           >

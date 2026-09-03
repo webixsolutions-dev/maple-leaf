@@ -18,6 +18,7 @@ import {
   FaChild,
   FaFileAlt,
 } from 'react-icons/fa';
+import { CONTACT } from '../data/contactInfo';
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */
@@ -29,7 +30,8 @@ const contactCards = [
     iconBg: 'bg-pink-100',
     iconColor: 'text-pink-500',
     title: 'Phone',
-    detail: '(403) 555-0123',
+    detail: CONTACT.phone,
+    href: `tel:${CONTACT.phoneTel}`,
     description: "We're happy to answer your questions.",
   },
   {
@@ -37,7 +39,8 @@ const contactCards = [
     iconBg: 'bg-green-100',
     iconColor: 'text-green-600',
     title: 'Email',
-    detail: 'hello@mapleleafmontessori.ca',
+    detail: CONTACT.email,
+    href: `mailto:${CONTACT.email}`,
     description: 'Send us a message anytime. We typically reply within one business day.',
   },
   {
@@ -45,7 +48,7 @@ const contactCards = [
     iconBg: 'bg-amber-100',
     iconColor: 'text-amber-500',
     title: 'Hours',
-    detail: 'Mon–Fri 7:00 AM–6:00 PM',
+    detail: CONTACT.hours,
     description: "We're open five days a week to support your family.",
   },
   {
@@ -181,7 +184,7 @@ const ContactUs = () => {
               {/* Description */}
               <p className="text-sm md:text-base text-gray-700 leading-relaxed mt-4 max-w-md">
                 Maple Leaf Montessori is a licensed Montessori daycare in
-                Calgary, open Monday–Friday from 7:00 AM to 6:00 PM.
+                Calgary, open Monday–Friday from {CONTACT.hoursShort}.
               </p>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed mt-3 max-w-md">
                 We&apos;re here to help! Reach out to us with any questions
@@ -199,7 +202,7 @@ const ContactUs = () => {
                   Book a Tour
                 </Link>
                 <a
-                  href="tel:+14035550123"
+                  href={`tel:${CONTACT.phoneTel}`}
                   className="inline-flex items-center gap-2 border-2 border-[#e0115f] text-[#e0115f] hover:bg-[#e0115f] hover:text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all"
                 >
                   <FaPhoneAlt className="text-xs" />
@@ -243,9 +246,18 @@ const ContactUs = () => {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-sm">{card.title}</h4>
-                <p className="text-xs font-semibold text-gray-800 mt-1 break-words">
-                  {card.detail}
-                </p>
+                {card.href ? (
+                  <a
+                    href={card.href}
+                    className="text-xs font-semibold text-gray-800 mt-1 break-words hover:text-[#c72a7a] transition-colors block"
+                  >
+                    {card.detail}
+                  </a>
+                ) : (
+                  <p className="text-xs font-semibold text-gray-800 mt-1 break-words">
+                    {card.detail}
+                  </p>
+                )}
                 <p className="text-[11px] text-gray-600 leading-relaxed mt-1.5">
                   {card.description}
                 </p>
@@ -340,7 +352,7 @@ const ContactUs = () => {
                           name="phone"
                           value={form.phone}
                           onChange={handleChange}
-                          placeholder="(403) 555-0123"
+                          placeholder={CONTACT.phone}
                           className="w-full border border-pink-200 rounded-xl pl-11 pr-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
                         />
                       </div>
@@ -501,7 +513,7 @@ const ContactUs = () => {
             <FaHeart className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-pink-50 px-1 text-pink-400 text-lg" />
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href="mailto:hello@mapleleafmontessori.ca"
+                href={`mailto:${CONTACT.email}`}
                 className="inline-flex items-center gap-2 border-2 border-[#e0115f] text-[#e0115f] hover:bg-[#e0115f] hover:text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all"
               >
                 <FaEnvelope className="text-xs" />

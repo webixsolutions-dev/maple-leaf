@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { FiChevronDown } from 'react-icons/fi';
-import IconPlaceholder from '../IconPlaceholder';
+import HomeServiceIcon from '../HomeServiceIcon';
+import { CHILD_CARE_COLORS } from './childCareServicesAssets';
+
+const DEFAULT_COLORS = CHILD_CARE_COLORS;
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -12,44 +14,75 @@ const ChildCareInfoCard = ({
   title,
   description,
   icon,
+  image,
   alt,
   color,
+  colorMap = DEFAULT_COLORS,
+  buttonTheme,
   index,
   isOpen = false,
   onLearnMore,
-}) => (
-  <motion.article
-    {...fadeUp}
-    transition={{ duration: 0.5, delay: index * 0.08 }}
-    className={`bg-white border rounded-2xl shadow-sm hover:shadow-md transition-shadow p-5 text-center flex flex-col items-center h-full ${
-      isOpen ? 'border-[#c72a7a] ring-1 ring-[#c72a7a]/20' : 'border-gray-100'
-    }`}
-  >
-    <IconPlaceholder
-      src={icon}
-      alt={alt}
-      color={color}
-      className="w-16 h-16 sm:w-20 sm:h-20 mb-4"
-    />
-    <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2">{title}</h3>
-    <p className="text-xs text-gray-600 leading-relaxed flex-1">{description}</p>
+  detailsId = 'service-detail-panel',
+}) => {
+  const theme = colorMap[color] ?? colorMap.pink ?? DEFAULT_COLORS.pink;
+  const learnMoreTheme = buttonTheme ?? theme;
 
-    {onLearnMore && (
-      <button
-        type="button"
-        onClick={onLearnMore}
-        aria-expanded={isOpen}
-        aria-controls="service-detail-panel"
-        className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-[#b0256e] text-white font-semibold text-xs px-4 py-2 rounded-xl mt-4 transition-all shadow-sm hover:shadow-md"
-      >
-        Learn More
-        <FiChevronDown
-          className={`text-sm transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-          aria-hidden="true"
-        />
-      </button>
-    )}
-  </motion.article>
-);
+  return (
+    <motion.article
+      {...fadeUp}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className={`bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col h-full overflow-hidden ${
+        isOpen ? `ring-2 ${theme.ring}` : ''
+      }`}
+    >
+      <div className="relative px-3 pt-3 pb-0">
+        <div className="relative rounded-t-[14px] overflow-hidden">
+          <img
+            src={image}
+            alt={alt}
+            loading="lazy"
+            className="w-full aspect-[8/7] object-cover block"
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-5 flex justify-center pointer-events-none"
+            aria-hidden="true"
+          >
+            <div className="w-[72px] h-10 bg-white rounded-t-full -mb-1" />
+          </div>
+        </div>
+
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[42%] z-10">
+          <HomeServiceIcon
+            src={icon}
+            alt=""
+            className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] object-contain drop-shadow-sm"
+          />
+        </div>
+      </div>
+
+      <div className="px-3 pt-8 pb-4 text-center flex flex-col flex-1">
+        <h3 className="font-heading font-bold text-[#1a2f4a] text-[15px] sm:text-base leading-snug mb-1.5">
+          {title}
+        </h3>
+        <p className="text-[11px] sm:text-xs text-[#3d4f63] leading-relaxed flex-1 px-1">
+          {description}
+        </p>
+
+        {onLearnMore && (
+          <button
+            type="button"
+            onClick={onLearnMore}
+            aria-expanded={isOpen}
+            aria-controls={detailsId}
+            className={`inline-flex items-center gap-1.5 font-semibold text-[11px] sm:text-xs mt-3 mx-auto px-4 py-1.5 rounded-full border transition-all hover:opacity-90 ${learnMoreTheme.border} ${learnMoreTheme.accentText}`}
+          >
+            Learn More
+            <span aria-hidden="true">→</span>
+          </button>
+        )}
+      </div>
+    </motion.article>
+  );
+};
 
 export default ChildCareInfoCard;

@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import {
-  FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
   FaClock,
   FaRegCalendarAlt,
+  FaInstagram,
+  FaFacebookF,
 } from 'react-icons/fa';
+import { CONTACT } from '../data/contactInfo';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -95,25 +97,48 @@ const Footer = () => {
             <div className="col-span-2 md:col-span-1">
               <h3 className="text-gray-900 font-bold text-sm mb-3">Contact Info</h3>
               <ul className="space-y-2.5">
-                <li className="flex items-start gap-2 text-sm text-gray-600">
-                  <FaMapMarkerAlt className="text-[#c72a7a] mt-0.5 shrink-0" />
-                  <span>
-                    1234 Maple Leaf Lane SW
-                    <br />
-                    Calgary, Alberta&nbsp;&nbsp;T2P 2M5
-                  </span>
-                </li>
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <FaPhone className="text-[#c72a7a] shrink-0" />
-                  (403) 555-0123
+                  <a href={`tel:${CONTACT.phoneTel}`} className="hover:text-[#c72a7a] transition-colors">
+                    {CONTACT.phone}
+                  </a>
                 </li>
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <FaEnvelope className="text-[#c72a7a] shrink-0" />
-                  hello@mapleleafmontessori.ca
+                  <a href={`mailto:${CONTACT.email}`} className="hover:text-[#c72a7a] transition-colors break-all">
+                    {CONTACT.email}
+                  </a>
                 </li>
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <FaClock className="text-[#c72a7a] shrink-0" />
-                  Mon – Fri: 7:00 AM – 6:00 PM
+                  {CONTACT.hours}
+                </li>
+                <li className="flex items-center gap-3 pt-1">
+                  <a
+                    href={CONTACT.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c72a7a] text-white transition-colors hover:bg-[#b0256e]"
+                  >
+                    <FaInstagram className="text-sm" />
+                  </a>
+                  <a
+                    href={CONTACT.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c72a7a] text-white transition-colors hover:bg-[#b0256e]"
+                  >
+                    <FaFacebookF className="text-sm" />
+                  </a>
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    aria-label="Email"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c72a7a] text-white transition-colors hover:bg-[#b0256e]"
+                  >
+                    <FaEnvelope className="text-sm" />
+                  </a>
                 </li>
               </ul>
             </div>
