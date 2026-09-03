@@ -1,20 +1,87 @@
-const iconSources = (fileNames) =>
-  fileNames.flatMap((name) => [
-    `/childcareservices/${name}.svg`,
-    `/personalcareservices/${name}.svg`,
-  ]);
-
 export const CHILD_CARE_ICONS = {
-  fullTimeNannies: iconSources(['fulltimenanies', 'fulltimenannies']),
-  partTimeNannies: iconSources(['parttimenanies', 'parttimenannies']),
-  liveInNannies: iconSources(['liveinnnanies', 'liveinnannies', 'live-in-nannies']),
-  babysitters: iconSources(['babysitters']),
-  inHomeSupport: iconSources(['inhomesupport', 'in-home-support']),
+  fullTimeNannies: '/childcareservices/fulltimenanies.svg',
+  partTimeNannies: '/childcareservices/parttimenanies.svg',
+  liveInNannies: '/childcareservices/liveinnnanies.svg',
+  babysitters: '/childcareservices/babysitters.svg',
+  inHomeSupport: '/childcareservices/inhomesupport.svg',
 };
 
 export const CHILD_CARE_IMAGES = {
   hero: '/childhero.webp',
   happyChildren: '/happychild.webp',
+  fullTimeNannies: '/childcareservices/full_time_nannies.webp',
+  partTimeNannies: '/childcareservices/part_time_nannies.webp',
+  liveInNannies: '/childcareservices/live_in_nannies.webp',
+  babysitters: '/childcareservices/babysitters.webp',
+  inHomeSupport: '/childcareservices/in_home_support.webp',
+};
+
+export const CHILD_CARE_COLORS = {
+  pink: {
+    header: 'bg-[#c72a7a]',
+    headerBg: 'bg-[#fde8ef]',
+    headerBorder: 'border-[#f0b8cc]',
+    panel: 'bg-[#fdf2f6]',
+    panelBorder: 'border-[#e8a0be]',
+    accent: '#c72a7a',
+    accentText: 'text-[#c72a7a]',
+    iconBg: 'bg-[#c72a7a]',
+    border: 'border-[#c72a7a]',
+    ring: 'ring-[#c72a7a]/25',
+    bullet: 'text-[#c72a7a]',
+  },
+  green: {
+    header: 'bg-[#3E9B23]',
+    headerBg: 'bg-[#edf7ea]',
+    headerBorder: 'border-[#b8ddb0]',
+    panel: 'bg-[#f3faf3]',
+    panelBorder: 'border-[#a8d49e]',
+    accent: '#3E9B23',
+    accentText: 'text-[#3E9B23]',
+    iconBg: 'bg-[#3E9B23]',
+    border: 'border-[#3E9B23]',
+    ring: 'ring-[#3E9B23]/25',
+    bullet: 'text-[#3E9B23]',
+  },
+  purple: {
+    header: 'bg-[#682CB0]',
+    headerBg: 'bg-[#f3ecfa]',
+    headerBorder: 'border-[#cdb8e8]',
+    panel: 'bg-[#f8f1fa]',
+    panelBorder: 'border-[#c0a8e0]',
+    accent: '#682CB0',
+    accentText: 'text-[#682CB0]',
+    iconBg: 'bg-[#682CB0]',
+    border: 'border-[#682CB0]',
+    ring: 'ring-[#682CB0]/25',
+    bullet: 'text-[#682CB0]',
+  },
+  orange: {
+    header: 'bg-[#FE8231]',
+    headerBg: 'bg-[#fff4e8]',
+    headerBorder: 'border-[#ffd4a8]',
+    panel: 'bg-[#fff8ee]',
+    panelBorder: 'border-[#ffc888]',
+    accent: '#FE8231',
+    accentText: 'text-[#FE8231]',
+    iconBg: 'bg-[#FE8231]',
+    border: 'border-[#FE8231]',
+    ring: 'ring-[#FE8231]/25',
+    bullet: 'text-[#FE8231]',
+  },
+  blue: {
+    header: 'bg-[#109BE5]',
+    headerBg: 'bg-[#e8f5fd]',
+    headerBorder: 'border-[#a8d4f0]',
+    panel: 'bg-[#f1f8fe]',
+    panelBorder: 'border-[#98c8ec]',
+    accent: '#109BE5',
+    accentText: 'text-[#109BE5]',
+    iconBg: 'bg-[#109BE5]',
+    border: 'border-[#109BE5]',
+    ring: 'ring-[#109BE5]/25',
+    bullet: 'text-[#109BE5]',
+  },
 };
 
 export const SERVICE_PHOTO_RADIUS =

@@ -30,13 +30,13 @@ const SeniorPersonalCareHero = () => (
           alt=""
           className="w-5 h-5 object-contain"
         />
-        Trusted care in the comfort of Home.
+        Trusted care in the comfort of home.
       </p>
 
       <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-        <span className="text-[#1a2f4a]">Senior & Personal</span>{' '}
+        <span className="text-[#1a2f4a]">Senior & </span>
         <span className="text-[#e0115f] inline-flex items-center gap-3 flex-wrap">
-          Care
+          Personal Care
           <HomeServiceIcon
             src={HOME_SERVICE_ICONS.right}
             alt=""
@@ -46,8 +46,8 @@ const SeniorPersonalCareHero = () => (
       </h1>
 
       <p className="text-sm md:text-base text-[#1a2f4a] leading-relaxed mt-4 max-w-md">
-        Compassionate and respectful care to support seniors and individuals in
-        their daily lives.
+        Compassionate support for seniors and individuals, promoting comfort,
+        dignity, and independence.
       </p>
     </motion.div>
   </section>

@@ -144,7 +144,7 @@ const centreInfo = [
     icon: <FaClock />,
     iconColor: 'text-purple-500',
     title: 'Monday – Friday',
-    subtitle: '7:00 AM – 6:00 PM',
+    subtitle: '9:00 AM – 5:00 PM',
   },
   {
     icon: <FaShieldAlt />,
