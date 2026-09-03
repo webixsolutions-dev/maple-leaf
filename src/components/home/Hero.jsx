@@ -183,7 +183,7 @@ const BottomHomecareBanner = () => (
 
 const Hero = () => {
   return (
-    <section className="font-montserrat relative overflow-hidden bg-white pt-24 md:pt-28 pb-14">
+    <section className="font-montserrat relative overflow-hidden bg-white pt-24 pb-14">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-12 md:space-y-12">
 
         {/* ================= HERO BLOCK (banners + hero card) ================= */}
@@ -259,8 +259,8 @@ const Hero = () => {
             {/* ---- Right image ---- */}
             <div className="relative min-h-[240px] md:min-h-[320px]">
               <img
-                src="/heroupdated.webp"
-                alt="Montessori classroom at Maple Leaf Montessori"
+                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80"
+                alt="Children learning at Maple Leaf Montessori"
                 className="absolute inset-0 w-full h-full object-cover md:rounded-l-[60px]"
               />
               {/* Motto badge on image */}
