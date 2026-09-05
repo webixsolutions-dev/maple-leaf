@@ -49,34 +49,6 @@ const HeroBanner = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs"
       >
-        {/* Brighter Futures Together — decorative, between text & image */}
-        <div
-          className="hidden sm:block absolute left-[52%] lg:left-[54%] top-[22%] lg:top-[24%] z-20 pointer-events-none select-none"
-          aria-hidden="true"
-        >
-          <div
-            className="text-[#3cb878] font-bold leading-[0.92] text-center"
-            style={{
-              fontFamily: '"Caveat", cursive',
-              transform: 'rotate(-14deg)',
-            }}
-          >
-            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
-              Brighter
-            </span>
-            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
-              Futures
-            </span>
-            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
-              Together
-            </span>
-          </div>
-          <FaHeart
-            className="text-[#E0115F]/50 text-base mt-0.5 ml-4"
-            style={{ transform: 'rotate(-14deg)' }}
-          />
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Content Column */}
           <div className="lg:col-span-7 relative z-10 flex flex-col items-start">
@@ -130,6 +102,36 @@ const HeroBanner = () => {
                 <FaCalendarAlt className="text-lg flex-shrink-0" />
                 <span>Learn About Our Daycare</span>
               </Link>
+            </div>
+
+            {/* Brighter Futures Together — below Explore Homecare Services button */}
+            <div
+              className="mt-5 sm:mt-6 ml-1 sm:ml-2 pointer-events-none select-none"
+              aria-hidden="true"
+            >
+              <div className="flex items-end gap-1">
+                <div
+                  className="text-[#3cb878] font-bold leading-[0.92]"
+                  style={{
+                    fontFamily: '"Caveat", cursive',
+                    transform: 'rotate(-14deg)',
+                  }}
+                >
+                  <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+                    Brighter
+                  </span>
+                  <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+                    Futures
+                  </span>
+                  <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+                    Together
+                  </span>
+                </div>
+                <FaHeart
+                  className="text-[#E0115F]/50 text-base mb-1"
+                  style={{ transform: 'rotate(-14deg)' }}
+                />
+              </div>
             </div>
           </div>
 

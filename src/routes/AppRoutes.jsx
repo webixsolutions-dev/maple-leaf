@@ -179,16 +179,84 @@ const AppRoutes = () => {
           } 
         />
 
-        {/* Program Sub-routes redirect to main coming soon programs page */}
-        <Route path="/programs/infant" element={<Navigate to="/programs" replace />} />
-        <Route path="/programs/toddler" element={<Navigate to="/programs" replace />} />
-        <Route path="/programs/preschool" element={<Navigate to="/programs" replace />} />
-        <Route path="/programs/after-school" element={<Navigate to="/programs" replace />} />
-        <Route path="/programs/summer" element={<Navigate to="/programs" replace />} />
+        {/* Program Sub-routes */}
+        <Route 
+          path="/programs/infant" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <InfantProgram />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/programs/toddler" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <ToddlerProgram />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/programs/preschool" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <PreschoolProgram />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/programs/after-school" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <AfterSchoolProgram />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/programs/summer" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <SummerProgram />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
 
-        {/* Admissions Sub-routes redirect to main coming soon admissions page */}
-        <Route path="/admissions/subsidy" element={<Navigate to="/admissions" replace />} />
-        <Route path="/admissions/registration" element={<Navigate to="/admissions" replace />} />
+        {/* Admissions Sub-routes */}
+        <Route 
+          path="/admissions/subsidy" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <Programs />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/admissions/registration" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AnimatedRoute>
+                <Admissions />
+              </AnimatedRoute>
+            </Suspense>
+          } 
+        />
 
      
         {/* Redirect any unknown routes to 404 */}

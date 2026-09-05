@@ -49,9 +49,9 @@ const Hero = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs"
       >
-        {/* Brighter Futures Together — decorative, positioned between text & image */}
+        {/* Brighter Futures Together — lower left, in vacant space between text & image */}
         <div
-          className="hidden sm:block absolute left-[52%] lg:left-[54%] top-[22%] lg:top-[24%] z-20 pointer-events-none select-none"
+          className="hidden sm:block absolute left-[51%] lg:left-[51%] bottom-[14%] lg:bottom-[16%] z-20 pointer-events-none select-none"
           aria-hidden="true"
         >
           <div
