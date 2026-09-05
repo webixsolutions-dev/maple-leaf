@@ -9,6 +9,7 @@ const cards = [
       'Care and support designed around the unique needs of children, seniors and families.',
     icon: <FaHeart className="text-white text-lg" />,
     iconBg: 'bg-[#f06a9a]',
+    objectPosition: 'object-top',
   },
   {
     image: '/homepics/03_dependable_support.webp',
@@ -17,6 +18,7 @@ const cards = [
       'Reliable services that help families manage everyday care and household responsibilities.',
     icon: <FaShieldAlt className="text-white text-lg" />,
     iconBg: 'bg-[#5ec9a0]',
+    objectPosition: 'object-top',
   },
   {
     image: '/homepics/04_family_focused_approach.webp',
@@ -25,6 +27,7 @@ const cards = [
       'Strong relationships, respect and open communication are at the centre of everything we do.',
     icon: <FaUsers className="text-white text-lg" />,
     iconBg: 'bg-[#f0c040]',
+    objectPosition: 'object-top',
   },
   {
     image: '/homepics/05_growing_with_community.webp',
@@ -33,6 +36,7 @@ const cards = [
       'Our Homecare Services are available today while our Montessori daycare prepares for its upcoming opening.',
     icon: <FaLeaf className="text-white text-lg" />,
     iconBg: 'bg-[#b8a0d8]',
+    objectPosition: 'object-top',
   },
 ];
 
@@ -73,7 +77,7 @@ const WhyFamiliesChoose = () => {
                   src={card.image}
                   alt={card.title}
                   loading="lazy"
-                  className="w-full h-[168px] lg:h-[178px] object-cover"
+                  className={`w-full h-[168px] lg:h-[178px] object-cover ${card.objectPosition || 'object-top'}`}
                 />
                 <div
                   className={`absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-[46px] h-[46px] ${card.iconBg} rounded-full flex items-center justify-center shadow-md ring-[5px] ring-white`}

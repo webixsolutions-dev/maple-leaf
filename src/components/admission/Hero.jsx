@@ -1,164 +1,138 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { 
-  FiCalendar, 
-  FiPhone, 
-  FiShield, 
-  FiUsers, 
-  FiClock, 
-  FiMapPin,
-  FiArrowRight
-} from 'react-icons/fi';
-import { FaLeaf, FaSun, FaHeart } from 'react-icons/fa';
-
-const Hero = () => {
-  const facts = [
-    {
-      icon: FiShield,
-      title: 'Licensed Facility',
-      body: 'Proudly licensed by Alberta Child Care Licensing.',
-      color: 'text-blue-500',
-      bg: 'bg-blue-50'
-    },
-    {
-      icon: FiUsers,
-      title: 'Ages 15 Months–6 Years',
-      body: 'Programs designed for infants, toddlers, and preschoolers.',
-      color: 'text-green-500',
-      bg: 'bg-green-50'
-    },
-    {
-      icon: FiClock,
-      title: 'Open Mon–Fri 10:00 AM–5:00 PM',
-      body: 'Full-day care with part-time options available.',
-      color: 'text-orange-500',
-      bg: 'bg-orange-50'
-    },
-    {
-      icon: FiMapPin,
-      title: 'Calgary, Alberta',
-      body: 'Conveniently located and proudly part of the Calgary community.',
-      color: 'text-purple-500',
-      bg: 'bg-purple-50'
-    },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-white min-h-screen flex items-center">
-      {/* Decorative Elements */}
-      <div className="absolute -top-20 -right-20 text-pink-200/20">
-        <FaLeaf className="text-[300px]" />
-      </div>
-      <div className="absolute -bottom-20 -left-20 text-yellow-200/20">
-        <FaSun className="text-[300px]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-12 w-full relative z-10">
-        
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Tagline */}
-            <span className="inline-flex items-center gap-2 bg-pink-50 text-[#c72a7a] text-sm font-semibold px-4 py-1.5 rounded-full mb-5 font-montserrat">
-              <FaHeart className="text-[#c72a7a]" />
-              Begin Your Montessori Journey
-            </span>
-
-            {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight font-montserrat">
-              Admissions
-              <br />
-              <span className="text-[#c72a7a]">Made Simple</span>
-              <FaSun className="text-3xl mt-2 inline-block ml-3 text-[#c72a7a]" />
-            </h1>
-
-            {/* Description */}
-            <p className="mt-5 text-gray-600 leading-relaxed max-w-md font-montserrat">
-              Maple Leaf Montessori is a licensed Montessori daycare in Calgary, open
-              Monday–Friday from 10:00 AM to 5:00 PM, and caring for children ages 15
-              months to 6 years.
-            </p>
-            <p className="mt-3 text-gray-600 leading-relaxed max-w-md font-montserrat">
-              The next step is easy — contact our centre or submit the form on our{' '}
-              <Link to="/book-tour" className="text-[#c72a7a] font-semibold underline underline-offset-2">
-                Book a Tour
-              </Link>{' '}
-              page.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link to="/book-tour">
-                <button className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition-all font-montserrat">
-                  <FiCalendar /> Book a Tour
-                </button>
-              </Link>
-              <Link to="/contact">
-                <button className="inline-flex items-center gap-2 border-2 border-[#c72a7a] text-[#c72a7a] font-semibold px-6 py-3 rounded-xl hover:bg-pink-50 transition-all font-montserrat">
-                  <FiPhone /> Contact Us
-                </button>
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center relative">
-              <img
-                src="/admissions.webp"
-                alt="Maple Leaf Montessori"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-md">
-                <p className="text-xs text-gray-600 font-montserrat font-semibold">
-                  Respect · Learn · Grow · Thrive
-                </p>
-              </div>
-            </div>
-            <FaLeaf className="absolute -bottom-3 -left-3 text-5xl text-[#c72a7a]/20 rotate-12" />
-          </motion.div>
-        </div>
-
-        {/* Facts Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-        >
-          {facts.map((fact, index) => {
-            const Icon = fact.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100"
-              >
-                <div className={`w-11 h-11 ${fact.bg} rounded-2xl flex items-center justify-center text-2xl mb-3 ${fact.color}`}>
-                  <Icon />
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm font-montserrat">{fact.title}</h3>
-                <p className="text-xs text-gray-600 mt-1 leading-snug font-montserrat">{fact.body}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-      </div>
-    </section>
-  );
-};
-
-export default Hero;
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import {
+  FaLeaf,
+  FaSun,
+  FaHeart,
+  FaHome,
+  FaComments,
+  FaArrowRight,
+} from 'react-icons/fa';
+
+const AdmissionsHero = () => {
+  return (
+    <>
+      {/* Announcement Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-[#FEFCE8] border border-[#FDE68A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs text-slate-700"
+      >
+        <div className="flex items-center gap-3.5">
+          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#FEF08A] flex items-center justify-center text-amber-500">
+            <FaSun className="text-xl" />
+          </div>
+          <p className="text-sm sm:text-base leading-relaxed">
+            <span className="font-bold text-slate-900">
+              Daycare Opening Soon in Calgary!
+            </span>{' '}
+            Our licensed Montessori daycare is preparing to open. In the
+            meantime,{' '}
+            <Link
+              to="/our-services"
+              className="text-[#2563EB] font-semibold hover:underline"
+            >
+              Homecare Services
+            </Link>{' '}
+            are available now to support your family.
+          </p>
+        </div>
+
+        <Link
+          to="/our-services"
+          className="bg-[#00A859] hover:bg-[#00924D] text-white px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-xs transition-all flex-shrink-0 w-full sm:w-auto justify-center"
+        >
+          <FaHome className="text-base" />
+          <span>Avail Homecare Services</span>
+          <FaArrowRight className="text-xs" />
+        </Link>
+      </motion.div>
+
+      {/* Hero Container */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Content */}
+          <div className="lg:col-span-7 relative z-10 flex flex-col items-start">
+            <div className="inline-flex items-center gap-2 bg-[#E0115F] text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider px-4 py-2 rounded-full shadow-xs mb-4">
+              <FaHeart className="text-[9px] sm:text-xs" />
+              <span>Where children learn, grow, and thrive</span>
+            </div>
+
+            <FaSun className="text-amber-400 text-3xl sm:text-4xl absolute top-0 right-4 hidden sm:block pointer-events-none" />
+
+            <h1 className="font-serif font-bold leading-[1.1] mt-1">
+              <span className="inline-flex items-center gap-2 text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-[#0F172A] tracking-tight">
+                Admissions
+                <FaLeaf className="text-emerald-500 text-2xl sm:text-3xl -rotate-12 flex-shrink-0" />
+              </span>
+              <span className="mt-2 block text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] text-[#E0115F] tracking-tight leading-tight">
+                Maple Leaf Montessori Daycare Coming Soon in Calgary
+              </span>
+            </h1>
+
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-5 max-w-xl">
+              Our admissions and enrolment details are currently being prepared,
+              and we will share updates soon. In the meantime, our{' '}
+              <span className="text-[#E0115F] font-semibold">
+                Homecare Services
+              </span>{' '}
+              are available now for children, seniors, individuals, and
+              households across Calgary.
+            </p>
+
+            <div className="flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 mt-8 w-full">
+              <Link
+                to="/our-services"
+                className="bg-[#E0115F] hover:bg-[#C72A7A] text-white px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all flex-1 sm:flex-none whitespace-nowrap"
+              >
+                <FaHome className="text-lg flex-shrink-0" />
+                <span>Explore Homecare Services</span>
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-white hover:bg-pink-50 border-2 border-[#E0115F] text-[#E0115F] px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs flex-1 sm:flex-none whitespace-nowrap"
+              >
+                <FaComments className="text-lg flex-shrink-0" />
+                <span>Contact Us</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-md border-4 border-white">
+              <img
+                src="/heroadmission.webp"
+                alt="Child building with Montessori blocks at Maple Leaf Montessori"
+                className="w-full h-auto object-cover rounded-2xl"
+              />
+
+              <div className="absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex flex-col items-start gap-0.5">
+                <p className="text-[#E0115F] font-extrabold text-sm leading-tight">
+                  Respect
+                </p>
+                <p className="text-sky-600 font-extrabold text-sm leading-tight">
+                  Learn
+                </p>
+                <p className="text-green-600 font-extrabold text-sm leading-tight">
+                  Grow
+                </p>
+                <p className="text-purple-600 font-extrabold text-sm leading-tight">
+                  Thrive
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </>
+  );
+};
+
+export default AdmissionsHero;

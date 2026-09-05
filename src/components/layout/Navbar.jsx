@@ -1,17 +1,22 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown, FaCalendarCheck } from 'react-icons/fa';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [programsDropdown, setProgramsDropdown] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
+  const currentLogo = isHomePage ? '/homelogo.PNG' : logo;
 
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/our-services', label: 'Our Services' },
     { 
+      path: '/programs',
       label: 'Programs', 
       dropdown: true,
       items: [
@@ -34,7 +39,7 @@ const Navbar = () => {
           {/* Logo - Left */}
           <Link to="/" className="flex-shrink-0">
             <img 
-              src={logo} 
+              src={currentLogo} 
               alt="Maple Leaf Montessori Logo" 
               className="h-20 w-60 object-contain sm:h-16 sm:w-auto md:h-20 md:w-auto"
             />
@@ -43,19 +48,26 @@ const Navbar = () => {
           {/* Desktop Menu - Centered */}
           <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
             {navLinks.map((link, index) => (
-              <div key={index} className="relative group">
+              <div
+                key={index}
+                className="relative group"
+                onMouseEnter={link.dropdown ? () => setProgramsDropdown(true) : undefined}
+                onMouseLeave={link.dropdown ? () => setProgramsDropdown(false) : undefined}
+              >
                 {link.dropdown ? (
-                  <button
-                    className="flex items-center gap-1 text-gray-700 hover:text-[#c72a7a] font-medium transition-colors duration-300 relative group"
-                    onMouseEnter={() => setProgramsDropdown(true)}
-                    onMouseLeave={() => setProgramsDropdown(false)}
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 font-medium transition-colors duration-300 relative group
+                      ${isActive ? 'text-[#c72a7a]' : 'text-gray-700 hover:text-[#c72a7a]'}`
+                    }
                   >
                     <span>{link.label}</span>
                     <FaChevronDown className={`text-xs transition-transform duration-300 ${
                       programsDropdown ? 'rotate-180' : ''
                     }`} />
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
-                  </button>
+                  </NavLink>
                 ) : (
                   <NavLink
                     to={link.path}
@@ -77,8 +89,6 @@ const Navbar = () => {
                         ? 'opacity-100 visible translate-y-0' 
                         : 'opacity-0 invisible -translate-y-2'
                     }`}
-                    onMouseEnter={() => setProgramsDropdown(true)}
-                    onMouseLeave={() => setProgramsDropdown(false)}
                   >
                     {link.items.map((item, idx) => (
                       <Link
@@ -94,16 +104,6 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Book a Tour Button - Right */}
-          <div className="hidden md:block">
-            <Link to="/book-tour">
-              <button className="bg-[#c72a7a] text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-[#b0256e] transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-                <FaCalendarCheck className="text-sm" />
-                Book a Tour
-              </button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button - Pink Color */}
@@ -124,7 +124,15 @@ const Navbar = () => {
                   {link.dropdown ? (
                     <details className="group">
                       <summary className="flex items-center justify-between cursor-pointer text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50">
-                        {link.label}
+                        <NavLink
+                          to={link.path}
+                          className={({ isActive }) =>
+                            isActive ? 'text-[#c72a7a]' : ''
+                          }
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {link.label}
+                        </NavLink>
                         <FaChevronDown className="text-xs group-open:rotate-180 transition-transform" />
                       </summary>
                       <div className="pl-4 mt-1 space-y-1">
@@ -154,12 +162,6 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              <Link to="/book-tour" onClick={() => setIsOpen(false)}>
-                <button className="w-full bg-[#c72a7a] text-white px-6 py-2.5 rounded-2xl font-semibold hover:bg-[#b0256e] transition-all mt-2 flex items-center justify-center gap-2">
-                  <FaCalendarCheck className="text-sm" />
-                  Book a Tour
-                </button>
-              </Link>
             </div>
           </div>
         )}

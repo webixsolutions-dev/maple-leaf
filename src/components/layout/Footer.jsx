@@ -7,9 +7,9 @@ import {
   FaFacebookF,
   FaPinterest,
   FaYoutube,
-  FaCanadianMapleLeaf,
 } from 'react-icons/fa';
 import { CONTACT } from '../data/contactInfo';
+import logo from '../../assets/logo.png';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -35,16 +35,13 @@ const socialLinks = [
 ];
 
 const FooterLogo = () => (
-  <div className="flex flex-col items-start">
-    <FaCanadianMapleLeaf className="text-[#c72a7a] text-3xl mb-1" />
-    <div className="leading-tight">
-      <span className="text-xl font-extrabold text-[#1e3a5f]">maple </span>
-      <span className="text-xl font-extrabold text-[#c72a7a]">leaf</span>
-    </div>
-    <span className="text-[10px] font-semibold text-gray-500 tracking-widest uppercase mt-0.5">
-      montessori
-    </span>
-  </div>
+  <Link to="/" className="inline-block flex-shrink-0">
+    <img
+      src={logo}
+      alt="Maple Leaf Montessori Logo"
+      className="h-28 sm:h-32 md:h-36 w-auto object-contain max-w-[280px] md:max-w-[320px]"
+    />
+  </Link>
 );
 
 const Footer = () => {

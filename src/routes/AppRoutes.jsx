@@ -90,6 +90,8 @@ const AppRoutes = () => {
             </Suspense>
           } 
         />
+
+        <Route path="/Programs" element={<Navigate to="/programs" replace />} />
         
         <Route 
           path="/admissions" 
