@@ -120,10 +120,13 @@ const Hero = () => {
                 <FaHome className="text-lg flex-shrink-0" />
                 <span>Explore Homecare Services</span>
               </Link>
-              <span className="bg-white border-2 border-[#E0115F] text-[#E0115F] px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs flex-1 sm:flex-none whitespace-nowrap">
+              <Link
+                to="/programs"
+                className="bg-white border-2 border-[#E0115F] text-[#E0115F] hover:bg-pink-50 px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs hover:shadow-md flex-1 sm:flex-none whitespace-nowrap"
+              >
                 <FaCalendarAlt className="text-lg flex-shrink-0" />
                 <span>Daycare Coming Soon</span>
-              </span>
+              </Link>
             </div>
           </div>
 
