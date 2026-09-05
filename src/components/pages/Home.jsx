@@ -1,15 +1,13 @@
-import Hero from '../../components/home/Hero';
-import QuickInfo from '../../components/home/QuickInfo';
-import AdmissionsFees from '../home/AdmissionFees';
-
+import Hero from '../home/Hero';
+import WhyFamiliesChoose from '../home/WhyFamiliesChoose';
+import MoreUpdatesComingSoon from '../home/MoreUpdatesComingSoon';
 
 const Home = () => {
   return (
-    <div>
+    <div className="pt-20">
       <Hero />
-      <QuickInfo />
-      <AdmissionsFees/>
-    
+      <WhyFamiliesChoose />
+      <MoreUpdatesComingSoon />
     </div>
   );
 };
