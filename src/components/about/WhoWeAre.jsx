@@ -57,11 +57,11 @@ const fadeUp = {
 
 const WhoWeAre = () => {
   return (
-    <section className="font-montserrat bg-white py-2 md:py-4">
+    <section className="font-montserrat bg-white pt-2 md:pt-4 pb-0">
       <motion.div
         {...fadeUp}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-3xl mx-auto mb-10 md:mb-12"
+        className="text-center max-w-3xl mx-auto mb-8 md:mb-10"
       >
         <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[#1e3a5f] inline-flex items-center justify-center gap-2 flex-wrap">
           Who We Are
