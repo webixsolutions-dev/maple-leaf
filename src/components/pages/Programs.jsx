@@ -1,356 +1,282 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  FaLeaf,
-  FaSun,
-  FaHeart,
-  FaBaby,
-  FaChild,
-  FaGraduationCap,
-  FaBriefcase,
-  FaCalendarAlt,
-  FaClock,
-  FaSeedling,
-  FaHandPaper,
-  FaComments,
-  FaArrowRight,
-} from 'react-icons/fa';
+import { FaSun, FaHeart, FaLeaf, FaHome, FaComments, FaArrowRight } from 'react-icons/fa';
 
-/* ------------------------------------------------------------------ */
-/*  DATA (content from programs_page documentation)                    */
-/* ------------------------------------------------------------------ */
+/* Decorative SVG Components for 100% Pixel-Perfect Match */
 
-const programs = [
-  {
-    icon: <FaBaby />,
-    title: 'Infant Program',
-    subtitle: '(Phase 4)',
-    age: '15 months – 24 months',
-    description:
-      'Nurturing care and early exploration in a calm, responsive environment.',
-    iconBg: 'bg-pink-500',
-    cardBg: 'bg-pink-50',
-    border: 'border-pink-100',
-    ageColor: 'text-pink-600',
-    image: '/infant.webp',
-    objectPosition: 'object-top',
-  },
-  {
-    icon: <FaChild />,
-    title: 'Toddler Program',
-    subtitle: '',
-    age: '2 years – 3 years',
-    description:
-      'Encouraging independence, movement, and curiosity through hands-on learning.',
-    iconBg: 'bg-amber-500',
-    cardBg: 'bg-amber-50',
-    border: 'border-amber-100',
-    ageColor: 'text-amber-600',
-    image:
-      'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=500&q=80',
-  },
-  {
-    icon: <FaGraduationCap />,
-    title: 'Preschool / Montessori Casa',
-    subtitle: '',
-    age: '3 years – 6 years',
-    description:
-      'Building confidence, critical thinking, and academic readiness in a Montessori environment.',
-    iconBg: 'bg-purple-600',
-    cardBg: 'bg-purple-50',
-    border: 'border-purple-100',
-    ageColor: 'text-purple-600',
-    image:
-      'https://images.unsplash.com/photo-1587616211892-f743fcca64f9?w=500&q=80',
-  },
-  {
-    icon: <FaBriefcase />,
-    title: 'Before & After School Care',
-    subtitle: '',
-    age: 'Kindergarten – Grade 6',
-    description:
-      'Safe, engaging care with homework support, play, and enrichment activities.',
-    iconBg: 'bg-green-600',
-    cardBg: 'bg-green-50',
-    border: 'border-green-100',
-    ageColor: 'text-green-700',
-    image:
-      'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&q=80',
-  },
-  {
-    icon: <FaSun />,
-    title: 'Summer Programs & Camps',
-    subtitle: '',
-    age: 'Ages 2 – 6 years',
-    description: 'Fun, themed camps and enrichment programs all summer long!',
-    iconBg: 'bg-sky-500',
-    cardBg: 'bg-sky-50',
-    border: 'border-sky-100',
-    ageColor: 'text-sky-600',
-    image:
-      'https://images.unsplash.com/photo-1476234251651-f353703a034d?w=500&q=80',
-  },
-];
+const HeartDoodle = ({ className = "w-10 h-10" }) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 14L37 4" stroke="#F59E0B" strokeWidth="4.5" strokeLinecap="round" />
+    <path d="M50 10L50 2" stroke="#F59E0B" strokeWidth="4.5" strokeLinecap="round" />
+    <path d="M60 14L63 4" stroke="#F59E0B" strokeWidth="4.5" strokeLinecap="round" />
+    <path
+      d="M50 85C50 85 15 60 15 35C15 22 25 15 37 15C44 15 48 19 50 23C52 19 56 15 63 15C75 15 85 22 85 35C85 60 50 85 50 85Z"
+      stroke="#E0115F"
+      strokeWidth="5.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  </svg>
+);
 
-const highlights = [
-  {
-    icon: <FaSeedling />,
-    iconBg: 'bg-pink-100',
-    iconColor: 'text-pink-500',
-    title: 'Montessori-Led Learning',
-    description:
-      'Authentic Montessori curriculum that fosters independence, focus, and a love of learning.',
-  },
-  {
-    icon: <FaLeaf />,
-    iconBg: 'bg-green-100',
-    iconColor: 'text-green-600',
-    title: 'Age-Appropriate Development',
-    description:
-      "Programs designed to support each child's growth across social, emotional, cognitive, and physical milestones.",
-  },
-  {
-    icon: <FaHandPaper />,
-    iconBg: 'bg-amber-100',
-    iconColor: 'text-amber-500',
-    title: 'Hands-On Discovery',
-    description:
-      'Children learn by doing through sensory-rich activities and real world experiences.',
-  },
-  {
-    icon: <FaComments />,
-    iconBg: 'bg-purple-100',
-    iconColor: 'text-purple-600',
-    title: 'Strong Parent Communication',
-    description:
-      'We partner with families through open, ongoing communication and regular updates.',
-  },
-];
+const BotanicalLeaves = ({ className = "w-24 h-28" }) => (
+  <svg className={className} viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 110 C35 70 50 40 70 10" stroke="#10B981" strokeWidth="3.5" strokeLinecap="round" />
+    <path d="M35 80 C20 70 10 50 25 45 C35 45 42 60 38 75 Z" fill="#6EE7B7" opacity="0.85" />
+    <path d="M48 55 C35 40 30 20 45 20 C55 25 55 45 48 55 Z" fill="#34D399" opacity="0.9" />
+    <path d="M28 102 C15 95 10 80 20 75 C30 75 32 88 28 102 Z" fill="#FDE047" opacity="0.9" />
+  </svg>
+);
 
-/* ------------------------------------------------------------------ */
-/*  ANIMATION                                                          */
-/* ------------------------------------------------------------------ */
+const WatercolorBadge = ({ lines, textColor = "text-emerald-600", rotate = "-rotate-3" }) => (
+  <div className={`relative inline-block px-6 py-5 text-center transform ${rotate} transition-transform hover:scale-105 duration-300`}>
+    <svg className="absolute inset-0 w-full h-full text-pink-200/90 -z-10 filter drop-shadow-xs" viewBox="0 0 180 110" preserveAspectRatio="none">
+      <path d="M12,25 C35,8 80,4 130,12 C172,20 182,38 176,68 C170,96 135,108 85,104 C35,100 8,86 4,58 C0,30 12,25 12,25 Z" fill="currentColor" />
+    </svg>
+    <div className={`font-sans font-bold text-sm sm:text-base leading-tight tracking-wide ${textColor}`}>
+      {lines.map((line, idx) => (
+        <div key={idx}>{line}</div>
+      ))}
+    </div>
+  </div>
+);
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
+  transition: { duration: 0.6 }
 };
-
-/* ------------------------------------------------------------------ */
-/*  COMPONENT                                                          */
-/* ------------------------------------------------------------------ */
 
 const ProgramsPage = () => {
   return (
-    <div className="font-montserrat bg-white pt-20 pb-14">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-10 md:space-y-12">
+    <div className="bg-white min-h-screen pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+        
+        {/* ================= ANNOUNCEMENT BANNER ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-[#FEFCE8] border border-[#FDE68A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 flex items-center gap-3.5 shadow-xs text-slate-700"
+        >
+          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#FEF08A] flex items-center justify-center text-amber-500">
+            <FaSun className="text-xl" />
+          </div>
+          <p className="text-sm sm:text-base leading-relaxed">
+            <span className="font-bold text-slate-900">Daycare Opening Soon in Calgary!</span>{' '}
+            Our licensed Montessori daycare is preparing to open. In the meantime, Homecare Services are available now to support your family.
+          </p>
+        </motion.div>
 
-        {/* ================= HERO BANNER ================= */}
+        {/* ================= SECTION 1: HERO CONTAINER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-3xl bg-pink-50"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs"
         >
-          <div className="grid md:grid-cols-2 items-stretch">
-
-            {/* ---- Left content ---- */}
-            <div className="relative p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-              <FaSun className="hidden lg:block absolute top-8 right-10 text-amber-400 text-4xl" />
-
-              {/* Tagline pill */}
-              <div className="inline-flex items-center gap-2 bg-pink-100 text-[#c72a7a] font-semibold text-[11px] md:text-xs px-4 py-1.5 rounded-full self-start mb-4">
-                <FaHeart className="text-[10px]" />
-                Where Curiosity Grows Every Day
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 relative z-10 flex flex-col items-start">
+              {/* Tagline Pill */}
+              <div className="inline-flex items-center gap-2 bg-[#FCE7F3] text-[#E0115F] font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-pink-200/60 shadow-xs mb-4">
+                <FaHeart className="text-[#E0115F] text-xs" />
+                <span>Where children learn, grow, and thrive</span>
               </div>
 
-              {/* Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900">
-                Programs for Every
-                <br />
-                <span className="text-[#e0115f] inline-flex items-center gap-3 flex-wrap">
-                  Stage of Early Learning
-                  <FaLeaf className="text-green-500 text-2xl lg:text-3xl" />
-                </span>
+              {/* Sun Icon */}
+              <FaSun className="text-amber-400 text-3xl sm:text-4xl absolute top-0 right-4 hidden sm:block pointer-events-none" />
+
+              {/* Main Heading H1 */}
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] tracking-tight leading-none flex items-center gap-3 flex-wrap mt-2">
+                <span>Programs</span>
+                <FaLeaf className="text-emerald-500 text-3xl sm:text-4xl -rotate-12 inline-block" />
               </h1>
 
-              {/* Description */}
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed mt-4 max-w-md">
-                At Maple Leaf Montessori, we offer licensed Montessori-based
-                daycare and preschool programs in Calgary for children ages{' '}
-                <span className="text-[#c72a7a] font-semibold">
-                  15 months to 6 years
-                </span>
-                . Our safe, structured, and nurturing environment supports
-                hands-on learning, independence, and a lifelong love of
-                discovery.
+              {/* Subheading H2 */}
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#E0115F] leading-snug mt-3">
+                Maple Leaf Montessori Daycare Coming Soon in Calgary
+              </h2>
+
+              {/* Body Paragraph */}
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-5 max-w-xl">
+                Our Montessori daycare programs are currently being prepared, and we will share full program details soon. In the meantime, our{' '}
+                <Link to="/our-services" className="text-[#E0115F] font-semibold underline underline-offset-2 hover:text-[#C72A7A] transition-colors">
+                  Homecare Services
+                </Link>{' '}
+                are available now for children, seniors, individuals, and households across Calgary.
               </p>
 
-              {/* Buttons */}
-              <div className="flex flex-wrap gap-3 mt-6">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 mt-8 w-full sm:w-auto">
                 <Link
-                  to="/book-a-tour"
-                  className="inline-flex items-center gap-2 bg-[#e0115f] hover:bg-[#c72a7a] text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all"
+                  to="/our-services"
+                  className="bg-[#E0115F] hover:bg-[#C72A7A] text-white px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all w-full sm:w-auto"
                 >
-                  <FaCalendarAlt />
-                  Book a Tour
+                  <FaHome className="text-lg" />
+                  <span>Explore Homecare Services</span>
                 </Link>
                 <Link
-                  to="/admissions"
-                  className="inline-flex items-center gap-2 border-2 border-[#e0115f] text-[#e0115f] hover:bg-[#e0115f] hover:text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all"
+                  to="/contact"
+                  className="bg-white hover:bg-pink-50 border-2 border-[#E0115F] text-[#E0115F] px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs w-full sm:w-auto"
                 >
-                  <FaLeaf className="text-xs" />
-                  View Admissions
+                  <FaComments className="text-lg" />
+                  <span>Contact Us</span>
                 </Link>
               </div>
             </div>
 
-            {/* ---- Right image ---- */}
-            <div className="relative min-h-[240px] md:min-h-[340px]">
-              <img
-                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80"
-                alt="Educator guiding children at Maple Leaf Montessori"
-                className="absolute inset-0 w-full h-full object-cover md:rounded-l-[60px]"
-              />
-              {/* Motto badge */}
-              <div className="absolute top-4 right-4 bg-white/85 backdrop-blur-sm rounded-2xl px-4 py-2.5 shadow-md text-right leading-tight">
-                <p className="text-[#e0115f] font-extrabold text-sm">Respect</p>
-                <p className="text-sky-600 font-extrabold text-sm">Learn</p>
-                <p className="text-green-600 font-extrabold text-sm">Grow</p>
-                <p className="text-purple-600 font-extrabold text-sm">Thrive</p>
+            {/* Right Image Column */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-md border-4 border-white">
+                <img
+                  src="/heroprogram.webp"
+                  alt="Maple Leaf Montessori Daycare Coming Soon"
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
               </div>
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* ================= SECTION 2: PROGRAMS INFORMATION COMING SOON ================= */}
+        <motion.div
+          {...fadeUp}
+          className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-xs text-center"
+        >
+          {/* Top Left Decorative Heart & Rays */}
+          <div className="absolute top-6 left-6 sm:top-10 sm:left-10 hidden sm:block">
+            <HeartDoodle className="w-12 h-12" />
+          </div>
+
+          {/* Bottom Left Botanical Leaves */}
+          <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-8 hidden sm:block pointer-events-none">
+            <BotanicalLeaves className="w-20 h-24 sm:w-28 sm:h-32" />
+          </div>
+
+          {/* Right Brush Stroke Watercolor Badge */}
+          <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-12 hidden md:block pointer-events-none">
+            <WatercolorBadge
+              lines={["Bright", "Learners", "Brighter", "Tomorrows", "♡"]}
+              textColor="text-emerald-600"
+              rotate="rotate-6"
+            />
+          </div>
+
+          {/* Center Content */}
+          <div className="max-w-3xl mx-auto relative z-10">
+            <div className="flex items-center justify-center gap-3">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]">
+                Programs Information
+              </h2>
+              <FaLeaf className="text-emerald-500 text-3xl sm:text-4xl -rotate-12 inline-block" />
+            </div>
+
+            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#E0115F] mt-1">
+              Coming Soon
+            </h3>
+
+            <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+              We are preparing our Maple Leaf Montessori daycare programs and will share full program details soon. Until then, families can explore our currently available Homecare Services.
+            </p>
+
+            <div className="mt-8 flex justify-center">
+              <Link
+                to="/our-services"
+                className="bg-[#E0115F] hover:bg-[#C72A7A] text-white px-8 py-4 rounded-2xl font-bold text-base sm:text-lg inline-flex items-center gap-3 shadow-md hover:shadow-lg transition-all"
+              >
+                <FaHome className="text-xl" />
+                <span>Explore Homecare Services</span>
+                <FaArrowRight className="text-base" />
+              </Link>
             </div>
           </div>
         </motion.div>
 
-        {/* ================= PROGRAM CARDS ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
-          {programs.map((program, index) => (
-            <motion.div
-              key={index}
-              {...fadeUp}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className={`${program.cardBg} ${program.border} border rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all p-4 flex flex-col group`}
-            >
-              {/* Icon + title */}
-              <div className="flex items-start gap-3 mb-3">
-                <div
-                  className={`w-11 h-11 ${program.iconBg} rounded-full flex items-center justify-center text-white text-base flex-shrink-0 shadow-sm`}
-                >
-                  {program.icon}
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm leading-snug pt-1">
-                  {program.title}{' '}
-                  {program.subtitle && (
-                    <span className="text-[#c72a7a] text-xs font-semibold">
-                      {program.subtitle}
-                    </span>
-                  )}
-                </h3>
-              </div>
-
-              {/* Image */}
-              <div className="rounded-xl overflow-hidden mb-3">
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  loading="lazy"
-                  className={`w-full h-28 object-cover ${program.objectPosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
-                />
-              </div>
-
-              {/* Description */}
-              <p className="text-[11px] text-gray-600 leading-relaxed flex-1">
-                {program.description}
-              </p>
-
-              {/* Age badge */}
-              <div
-                className={`inline-flex items-center gap-1.5 mt-3 text-xs font-bold ${program.ageColor}`}
-              >
-                <FaClock className="text-[11px]" />
-                {program.age}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* ================= OUR PROGRAMS AT A GLANCE ================= */}
-        <div className="bg-white border border-gray-100 rounded-3xl shadow-sm p-5 sm:p-7">
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-8"
-          >
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 inline-flex items-center gap-3 flex-wrap justify-center">
-              <FaSun className="text-amber-400 text-xl" />
-              <span>
-                Our Programs <span className="text-[#c72a7a]">at a Glance</span>
-              </span>
-              <FaHeart className="text-pink-400 text-lg" />
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {highlights.map((item, index) => (
-              <motion.div
-                key={index}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all p-4 flex items-start gap-3"
-              >
-                <div
-                  className={`w-11 h-11 ${item.iconBg} ${item.iconColor} rounded-full flex items-center justify-center text-lg flex-shrink-0`}
-                >
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-xs leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-[11px] text-gray-600 leading-relaxed mt-1">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* ================= CTA BANNER ================= */}
+        {/* ================= SECTION 3: SPLIT COMPARISON BANNER ================= */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.6 }}
-          className="relative overflow-hidden bg-pink-50 border border-pink-100 rounded-2xl px-5 sm:px-8 py-7"
+          className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden shadow-xs"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-6">
-            <div className="flex items-center gap-4 flex-shrink-0">
-              <FaLeaf className="text-[#e0115f] text-3xl -rotate-45" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">
-                Ready to Find the Right Program for{' '}
-                <span className="text-[#e0115f]">Your Child?</span>
-              </h3>
+          {/* Vertical Divider Line for desktop */}
+          <div className="hidden md:block absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-px bg-pink-200/80"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 relative z-10">
+            
+            {/* Left Column: Daycare Coming Soon */}
+            <div className="flex flex-col justify-between items-start relative pr-0 md:pr-4">
+              <div>
+                <span className="text-[#E0115F] font-bold text-xs sm:text-sm tracking-wider uppercase block mb-3">
+                  SAME CARE. BRIGHTER TOMORROWS.
+                </span>
+
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A] leading-tight">
+                  Maple Leaf Montessori Daycare <span className="text-[#E0115F]">Coming Soon</span>
+                </h2>
+
+                <p className="text-slate-600 text-base leading-relaxed mt-4 max-w-md">
+                  Our licensed Montessori daycare in Calgary is on the way, and we can't wait to welcome families soon.
+                </p>
+              </div>
+
+              {/* Heart doodle top right of left column */}
+              <div className="absolute top-0 right-0 hidden sm:block">
+                <HeartDoodle className="w-10 h-10" />
+              </div>
+
+              {/* Grow Learn Belong badge at bottom */}
+              <div className="mt-8">
+                <WatercolorBadge
+                  lines={["Grow", "Learn", "Belong", "♡"]}
+                  textColor="text-emerald-600"
+                  rotate="-rotate-3"
+                />
+              </div>
             </div>
 
-            <p className="flex-1 text-xs md:text-sm text-gray-700 leading-relaxed text-center lg:text-left lg:border-l lg:border-pink-200 lg:pl-6">
-              We&apos;d love to show you around! Book a tour to meet our
-              educators, explore our classrooms, and find the perfect fit for
-              your family.
-            </p>
+            {/* Right Column: Homecare Services Available Now */}
+            <div className="flex flex-col justify-between items-start relative pl-0 md:pl-4">
+              {/* Sun icon top right of right column */}
+              <div className="absolute top-0 right-0">
+                <FaSun className="text-amber-400 text-3xl sm:text-4xl" />
+              </div>
 
-            <div className="flex items-center gap-4 flex-shrink-0">
-              <Link
-                to="/book-a-tour"
-                className="inline-flex items-center gap-2 bg-[#e0115f] hover:bg-[#c72a7a] text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all"
-              >
-                <FaCalendarAlt />
-                Book a Tour
-                <FaArrowRight className="text-xs" />
-              </Link>
-              <FaSun className="text-amber-400 text-2xl hidden sm:block" />
-              <FaLeaf className="text-green-500 text-xl hidden sm:block" />
+              <div>
+                <span className="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase block mb-3">
+                  SUPPORTING FAMILIES TODAY.
+                </span>
+
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A] leading-tight flex items-center gap-2 flex-wrap">
+                  <span>Homecare Services Available Now</span>
+                  <FaHome className="text-emerald-500 text-2xl sm:text-3xl inline-block" />
+                </h2>
+
+                <p className="text-slate-600 text-base leading-relaxed mt-4 max-w-md">
+                  While our daycare programs are being prepared, our Homecare Services are available now for children, seniors, individuals, and households across Calgary.
+                </p>
+              </div>
+
+              <div className="mt-8 flex items-center justify-between w-full">
+                <Link
+                  to="/our-services"
+                  className="bg-[#00A859] hover:bg-[#00924D] text-white px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center gap-3 shadow-md hover:shadow-lg transition-all"
+                >
+                  <FaHome className="text-lg" />
+                  <span>Explore Homecare Services</span>
+                  <FaArrowRight className="text-sm" />
+                </Link>
+
+                {/* Botanical leaves bottom right */}
+                <div className="hidden sm:block pointer-events-none">
+                  <BotanicalLeaves className="w-16 h-20" />
+                </div>
+              </div>
             </div>
+
           </div>
         </motion.div>
 

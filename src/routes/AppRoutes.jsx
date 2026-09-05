@@ -179,61 +179,12 @@ const AppRoutes = () => {
           } 
         />
 
-        {/* Program Sub-routes */}
-        <Route 
-          path="/programs/infant" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <InfantProgram />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
-        
-        <Route 
-          path="/programs/toddler" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <ToddlerProgram />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
-        
-        <Route 
-          path="/programs/preschool" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <PreschoolProgram />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
-        
-        <Route 
-          path="/programs/after-school" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <AfterSchoolProgram />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
-        
-        <Route 
-          path="/programs/summer" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <SummerProgram />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
+        {/* Program Sub-routes redirect to main coming soon programs page */}
+        <Route path="/programs/infant" element={<Navigate to="/programs" replace />} />
+        <Route path="/programs/toddler" element={<Navigate to="/programs" replace />} />
+        <Route path="/programs/preschool" element={<Navigate to="/programs" replace />} />
+        <Route path="/programs/after-school" element={<Navigate to="/programs" replace />} />
+        <Route path="/programs/summer" element={<Navigate to="/programs" replace />} />
 
         {/* Admissions Sub-routes */}
         <Route 

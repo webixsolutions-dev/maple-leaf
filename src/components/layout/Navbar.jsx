@@ -11,17 +11,7 @@ const Navbar = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/our-services', label: 'Our Services' },
-    { 
-      label: 'Programs', 
-      dropdown: true,
-      items: [
-        { path: '/programs/infant', label: 'Infant Program (Phase 4)' },
-        { path: '/programs/toddler', label: 'Toddler Program (2-3 Years)' },
-        { path: '/programs/preschool', label: 'Preschool / Montessori Casa' },
-        { path: '/programs/after-school', label: 'Before & After School Care' },
-        { path: '/programs/summer', label: 'Summer Programs & Camps' },
-      ]
-    },
+    { path: '/programs', label: 'Programs' },
     { path: '/admissions', label: 'Admissions' },
     { path: '/contact', label: 'Contact Us' },
   ];
