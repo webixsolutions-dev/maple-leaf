@@ -186,28 +186,9 @@ const AppRoutes = () => {
         <Route path="/programs/after-school" element={<Navigate to="/programs" replace />} />
         <Route path="/programs/summer" element={<Navigate to="/programs" replace />} />
 
-        {/* Admissions Sub-routes */}
-        <Route 
-          path="/admissions/subsidy" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <Programs />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
-        
-        <Route 
-          path="/admissions/registration" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <AnimatedRoute>
-                <Admissions />
-              </AnimatedRoute>
-            </Suspense>
-          } 
-        />
+        {/* Admissions Sub-routes redirect to main coming soon admissions page */}
+        <Route path="/admissions/subsidy" element={<Navigate to="/admissions" replace />} />
+        <Route path="/admissions/registration" element={<Navigate to="/admissions" replace />} />
 
      
         {/* Redirect any unknown routes to 404 */}

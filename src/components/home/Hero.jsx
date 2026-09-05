@@ -9,136 +9,135 @@ import {
   FaArrowRight,
 } from 'react-icons/fa';
 
-const HomecareButton = ({ className = '' }) => (
-  <Link
-    to="/our-services"
-    className={`inline-flex items-center gap-2 bg-[#008f4c] hover:bg-[#007a42] text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all whitespace-nowrap flex-shrink-0 ${className}`}
-  >
-    <FaHome className="text-sm" />
-    Avail Homecare Services
-    <FaArrowRight className="text-xs" />
-  </Link>
-);
-
-const TopAnnouncementBanner = () => (
-  <div className="bg-[#fef9ee] border-b border-amber-100/60">
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-3">
-      <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-5">
-        <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
-          <FaSun className="text-amber-400 text-xl sm:text-2xl flex-shrink-0 mt-0.5 sm:mt-0" />
-          <p className="text-sm md:text-[15px] leading-relaxed text-[#4a6b8a]">
-            <span className="font-bold text-[#1e3a5f]">
+const Hero = () => {
+  return (
+    <>
+      {/* Announcement Banner — matches Admissions & Programs */}
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-[#FEFCE8] border border-[#FDE68A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs text-slate-700"
+      >
+        <div className="flex items-center gap-3.5">
+          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#FEF08A] flex items-center justify-center text-amber-500">
+            <FaSun className="text-xl" />
+          </div>
+          <p className="text-sm sm:text-base leading-relaxed">
+            <span className="font-bold text-slate-900">
               Daycare Opening Soon in Calgary!
             </span>{' '}
             Our licensed Montessori daycare is preparing to open. In the meantime,
             Homecare Services are available now to support your family.
           </p>
         </div>
-        <HomecareButton />
-      </div>
-    </div>
-  </div>
-);
 
-const Hero = () => {
-  return (
-    <section className="font-montserrat relative bg-[#fdf8f6]">
-      <TopAnnouncementBanner />
-
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-8 pb-14 md:pt-10 md:pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center"
+        <Link
+          to="/our-services"
+          className="bg-[#00A859] hover:bg-[#00924D] text-white px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-xs transition-all flex-shrink-0 w-full sm:w-auto justify-center"
         >
-          {/* Left content */}
-          <div className="relative pr-20 sm:pr-28 lg:pr-36">
-            <FaSun className="absolute top-0 right-6 sm:right-12 lg:right-24 text-amber-400 text-3xl lg:text-4xl opacity-90" />
+          <FaHome className="text-base" />
+          <span>Avail Homecare Services</span>
+          <FaArrowRight className="text-xs" />
+        </Link>
+      </motion.div>
 
-            <div className="inline-flex items-center gap-2 bg-[#c72a7a] text-white font-semibold text-[10px] md:text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-full mb-5">
-              <FaHeart className="text-[9px]" />
-              Where Curiosity Grows Every Day
+      {/* Hero Container — matches Admissions & Programs */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="bg-[#FFF5F7] border border-pink-100/80 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs"
+      >
+        {/* Brighter Futures Together — decorative, positioned between text & image */}
+        <div
+          className="hidden sm:block absolute left-[52%] lg:left-[54%] top-[22%] lg:top-[24%] z-20 pointer-events-none select-none"
+          aria-hidden="true"
+        >
+          <div
+            className="text-[#3cb878] font-bold leading-[0.92] text-center"
+            style={{
+              fontFamily: '"Caveat", cursive',
+              transform: 'rotate(-14deg)',
+            }}
+          >
+            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+              Brighter
+            </span>
+            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+              Futures
+            </span>
+            <span className="block text-[26px] sm:text-[30px] lg:text-[36px]">
+              Together
+            </span>
+          </div>
+          <FaHeart
+            className="text-[#E0115F]/50 text-base mt-0.5 ml-4"
+            style={{ transform: 'rotate(-14deg)' }}
+          />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Content Column */}
+          <div className="lg:col-span-7 relative z-10 flex flex-col items-start">
+            {/* Tagline Pill */}
+            <div className="inline-flex items-center gap-2 bg-[#E0115F] text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider px-4 py-2 rounded-full shadow-xs mb-4">
+              <FaHeart className="text-[9px] sm:text-xs" />
+              <span>Where Curiosity Grows Every Day</span>
             </div>
 
-            <h1 className="font-heading font-bold leading-[1.15]">
-              <span className="block text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl text-[#1e3a5f] whitespace-nowrap">
+            {/* Sun Icon */}
+            <FaSun className="text-amber-400 text-3xl sm:text-4xl absolute top-0 right-4 hidden sm:block pointer-events-none" />
+
+            {/* Main Heading */}
+            <h1 className="font-serif font-bold leading-[1.1] mt-1">
+              <span className="block text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-[#0F172A] tracking-tight">
                 Maple Leaf Montessori
               </span>
-              <span className="mt-1 flex items-center gap-2 text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl text-[#c72a7a] whitespace-nowrap">
+              <span className="mt-1 flex items-center gap-2 text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-[#E0115F] tracking-tight">
                 Daycare Opening Soon
-                <FaLeaf className="text-green-500 text-xl lg:text-2xl flex-shrink-0" />
+                <FaLeaf className="text-emerald-500 text-2xl sm:text-3xl -rotate-12 flex-shrink-0" />
               </span>
             </h1>
 
-            <div className="relative mt-5 max-w-md">
-              <p className="text-sm md:text-base text-[#3d5a73] leading-relaxed">
-                Our licensed Montessori daycare is preparing to welcome families
-                in Calgary. In the meantime, our{' '}
-                <span className="text-[#c72a7a] font-semibold">
-                  Homecare Services
-                </span>{' '}
-                are available now, providing dependable support for children,
-                seniors and households.
-              </p>
-            </div>
+            {/* Body Paragraph */}
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-5 max-w-xl">
+              Our licensed Montessori daycare is preparing to welcome families in
+              Calgary. In the meantime, our{' '}
+              <span className="text-[#E0115F] font-semibold">
+                Homecare Services
+              </span>{' '}
+              are available now, providing dependable support for children,
+              seniors and households.
+            </p>
 
-            {/* Brighter Futures Together — diagonal decorative text */}
-            <div
-              className="hidden sm:block absolute right-0 lg:right-2 top-[52%] lg:top-[56%] pointer-events-none select-none"
-              aria-hidden="true"
-            >
-              <div
-                className="text-[#3cb878] font-bold leading-[0.92] text-center"
-                style={{
-                  fontFamily: '"Caveat", cursive',
-                  transform: 'rotate(-16deg)',
-                }}
-              >
-                <span className="block text-[30px] sm:text-[34px] lg:text-[40px]">
-                  Brighter
-                </span>
-                <span className="block text-[30px] sm:text-[34px] lg:text-[40px]">
-                  Futures
-                </span>
-                <span className="block text-[30px] sm:text-[34px] lg:text-[40px]">
-                  Together
-                </span>
-              </div>
-              <FaHeart
-                className="text-[#c72a7a]/45 text-lg mt-1 ml-6"
-                style={{ transform: 'rotate(-16deg)' }}
-              />
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 mt-10 lg:mt-12">
+            {/* Action Buttons — side by side */}
+            <div className="flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 mt-8 w-full">
               <Link
                 to="/our-services"
-                className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-[#b0256e] text-white font-semibold text-sm px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all"
+                className="bg-[#E0115F] hover:bg-[#C72A7A] text-white px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all flex-1 sm:flex-none whitespace-nowrap"
               >
-                <FaHome className="text-sm" />
-                Explore Homecare Services
+                <FaHome className="text-lg flex-shrink-0" />
+                <span>Explore Homecare Services</span>
               </Link>
-              <span
-                className="inline-flex items-center gap-2 bg-white border-2 border-[#c72a7a] text-[#c72a7a] font-semibold text-sm px-6 py-2.5 rounded-full"
-              >
-                <FaCalendarAlt className="text-sm" />
-                Daycare Coming Soon
+              <span className="bg-white border-2 border-[#E0115F] text-[#E0115F] px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs flex-1 sm:flex-none whitespace-nowrap">
+                <FaCalendarAlt className="text-lg flex-shrink-0" />
+                <span>Daycare Coming Soon</span>
               </span>
             </div>
           </div>
 
-          {/* Right image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-[28px] shadow-lg">
+          {/* Right Image Column */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-md border-4 border-white">
               <img
                 src="/homepics/01_hero_daycare.webp"
                 alt="Child learning with colorful blocks at Maple Leaf Montessori"
-                className="w-full aspect-[4/3] object-cover"
+                className="w-full h-auto object-cover rounded-2xl"
               />
 
               <div className="absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex flex-col items-start gap-0.5">
-                <p className="text-[#c72a7a] font-extrabold text-sm leading-tight">
+                <p className="text-[#E0115F] font-extrabold text-sm leading-tight">
                   Respect
                 </p>
                 <p className="text-sky-600 font-extrabold text-sm leading-tight">
@@ -153,9 +152,9 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </motion.div>
+    </>
   );
 };
 
