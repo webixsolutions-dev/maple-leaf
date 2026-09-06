@@ -13,10 +13,15 @@ const CleanerHomeSection = () => (
   <motion.section
     {...fadeUp}
     transition={{ duration: 0.6 }}
-    className="relative overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat min-h-[220px] sm:min-h-[260px] lg:min-h-[300px]"
-    style={{ backgroundImage: `url('${HOME_CLEANING_IMAGES.cleanerHome}')` }}
+    className="relative overflow-hidden rounded-3xl bg-[#faf8f5] lg:bg-transparent lg:min-h-[300px] flex flex-col lg:block"
   >
-    <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col justify-center max-w-full md:max-w-[55%] min-h-[220px] sm:min-h-[260px] lg:min-h-[300px]">
+    <div
+      className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('${HOME_CLEANING_IMAGES.cleanerHome}')` }}
+      aria-hidden="true"
+    />
+
+    <div className="relative z-10 px-6 pt-6 pb-0 sm:px-8 sm:pt-8 sm:pb-0 lg:p-10 flex flex-col justify-center max-w-full md:max-w-[55%] lg:min-h-[300px]">
       <div className="flex items-start gap-3 mb-3">
         <HomeServiceIcon
           src={HOME_SERVICE_ICONS.left}
@@ -32,6 +37,12 @@ const CleanerHomeSection = () => (
         matters most.
       </p>
     </div>
+
+    <img
+      src={HOME_CLEANING_IMAGES.cleanerHome}
+      alt="Professional cleaner maintaining a healthy home"
+      className="lg:hidden w-full aspect-[5/4] sm:aspect-[16/10] object-cover object-right block shrink-0 leading-none"
+    />
   </motion.section>
 );
 
