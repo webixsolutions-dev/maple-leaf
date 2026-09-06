@@ -19,13 +19,18 @@ const CTABanner = () => {
         src="/Samecare.webp"
         alt=""
         aria-hidden="true"
-        className="w-full h-auto block lg:absolute lg:inset-0 lg:h-full lg:w-full lg:object-cover lg:object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      <div className="relative z-10 flex lg:absolute lg:inset-0 lg:items-start lg:pt-[10%] px-5 sm:px-8 lg:px-0 py-8 sm:py-10 lg:py-0">
-        <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-0 lg:items-start">
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white/95 lg:hidden pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 px-5 sm:px-8 pb-8 pt-32 sm:pt-36 min-h-[520px] sm:min-h-[560px] flex flex-col justify-end lg:absolute lg:inset-0 lg:min-h-0 lg:flex lg:items-start lg:justify-start lg:pt-[10%] lg:px-0 lg:py-0 lg:pb-0">
+        <div className="grid w-full gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-0 lg:items-start">
           {/* Left — Daycare Coming Soon */}
-          <div className="relative pl-[15%] sm:pl-[18%] lg:pl-[33%] xl:pl-[35%] lg:pr-8 xl:pr-10">
+          <div className="relative lg:pl-[33%] xl:pl-[35%] lg:pr-8 xl:pr-10">
             <h3 className="font-heading text-xl sm:text-2xl md:text-[1.65rem] lg:text-[1.75rem] xl:text-[1.85rem] font-bold text-[#1e3a5f] leading-tight">
               Maple Leaf Montessori
             </h3>

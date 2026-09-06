@@ -24,11 +24,16 @@ const InfoSection = () => {
         src="/montsori.jpeg"
         alt=""
         aria-hidden="true"
-        className="w-full h-auto block lg:absolute lg:inset-x-0 lg:top-0 lg:h-[115%] lg:w-full lg:object-cover lg:object-center lg:-translate-y-[10%]"
+        className="absolute inset-0 w-full h-full object-cover object-center lg:h-[115%] lg:-translate-y-[10%]"
       />
 
-      <div className="relative z-10 flex lg:absolute lg:inset-0 lg:items-center px-5 sm:px-8 lg:px-[5%] py-8 sm:py-10 lg:py-6">
-        <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-0 lg:items-center">
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white/95 lg:hidden pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 px-5 sm:px-8 pb-8 pt-32 sm:pt-36 min-h-[560px] sm:min-h-[600px] flex flex-col justify-end lg:absolute lg:inset-0 lg:min-h-0 lg:flex lg:items-center lg:justify-center lg:px-[5%] lg:py-6 lg:pt-6">
+        <div className="grid w-full gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-0 lg:items-center">
           {/* Left — Daycare Coming Soon */}
           <div className="relative lg:pr-8 lg:border-r lg:border-pink-200/60">
             <p className="text-[#E0115F] text-xs sm:text-sm font-bold uppercase tracking-widest mb-3 sm:mb-4">

@@ -19,10 +19,15 @@ const ComingSoonBanner = () => {
         src="/brightlearners.jpeg"
         alt=""
         aria-hidden="true"
-        className="w-full h-auto block lg:absolute lg:inset-0 lg:h-full lg:w-full lg:object-cover lg:object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      <div className="relative z-10 flex items-center justify-center px-6 sm:px-10 py-10 md:py-12 lg:absolute lg:inset-0 lg:py-8">
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/55 to-white/92 lg:hidden pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 flex items-end justify-center px-6 sm:px-10 pb-8 pt-36 sm:pt-40 min-h-[400px] sm:min-h-[440px] lg:absolute lg:inset-0 lg:min-h-0 lg:items-center lg:justify-center lg:py-8 lg:pt-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#0F172A] leading-tight">
             Programs Information

@@ -12,10 +12,15 @@ const VisionMissionSection = () => (
   <motion.section
     {...fadeUp}
     transition={{ duration: 0.6 }}
-    className="relative overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat p-6 sm:p-8 lg:p-10"
-    style={{ backgroundImage: `url('${HOME_SERVICE_IMAGES.visionMissionBackground}')` }}
+    className="relative overflow-hidden rounded-3xl bg-[#faf8f5] lg:bg-transparent flex flex-col lg:block"
   >
-    <div className="relative z-10 grid md:grid-cols-2 gap-8 md:gap-12">
+    <div
+      className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('${HOME_SERVICE_IMAGES.visionMissionBackground}')` }}
+      aria-hidden="true"
+    />
+
+    <div className="relative z-10 px-6 pt-6 pb-0 sm:px-8 sm:pt-8 sm:pb-0 lg:p-10 grid md:grid-cols-2 gap-8 md:gap-12">
       <div className="md:pr-8">
         <div className="flex items-start gap-3 mb-3">
           <HomeServiceIcon
@@ -49,6 +54,13 @@ const VisionMissionSection = () => (
         </p>
       </div>
     </div>
+
+    <img
+      src={HOME_SERVICE_IMAGES.visionMissionBackground}
+      alt=""
+      aria-hidden="true"
+      className="lg:hidden w-full aspect-[5/4] sm:aspect-[16/10] object-cover object-right block shrink-0 leading-none"
+    />
   </motion.section>
 );
 

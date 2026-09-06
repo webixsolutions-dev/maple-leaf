@@ -73,34 +73,33 @@ const WhoWeAre = () => {
         </p>
       </motion.div>
 
-      <div className="overflow-x-auto pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
-        <div className="grid grid-cols-4 gap-3 sm:gap-4 lg:gap-5 min-w-[880px] lg:min-w-0">
+      <div className="flex flex-col lg:flex-row lg:flex-nowrap gap-4 lg:gap-5 items-stretch">
           {cards.map((card, index) => (
             <motion.article
               key={card.title}
               {...fadeUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="relative bg-white border border-[#f3d4dc] rounded-[18px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md transition-shadow overflow-hidden flex flex-col min-w-0"
+              className="relative bg-white border border-[#f3d4dc] rounded-[18px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md transition-shadow overflow-hidden flex flex-col flex-1 min-w-0"
             >
               <div className="relative flex-shrink-0">
                 <img
                   src={card.image}
                   alt={card.title}
                   loading="lazy"
-                  className="w-full h-[140px] sm:h-[160px] lg:h-[178px] object-cover"
+                  className="w-full h-[168px] lg:h-[178px] object-cover object-top"
                 />
                 <div
-                  className={`absolute -bottom-[20px] left-1/2 -translate-x-1/2 w-[42px] h-[42px] sm:w-[46px] sm:h-[46px] ${card.iconBg} rounded-full flex items-center justify-center shadow-md ring-[5px] ring-white`}
+                  className={`absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-[46px] h-[46px] ${card.iconBg} rounded-full flex items-center justify-center shadow-md ring-[5px] ring-white`}
                 >
                   {card.icon}
                 </div>
               </div>
 
-              <div className="pt-8 sm:pt-9 pb-6 sm:pb-7 px-2.5 sm:px-4 lg:px-5 text-center flex-1 flex flex-col">
-                <h3 className="font-heading text-[13px] sm:text-[15px] lg:text-base font-bold text-[#1e3a5f] mb-2 leading-snug">
+              <div className="pt-9 pb-7 px-4 lg:px-5 text-center flex-1 flex flex-col">
+                <h3 className="font-heading text-[15px] lg:text-base font-bold text-[#1e3a5f] mb-2.5 leading-snug">
                   {card.title}
                 </h3>
-                <p className="text-[10px] sm:text-[11px] lg:text-xs text-[#5a7a96] leading-relaxed">
+                <p className="text-[11px] lg:text-xs text-[#5a7a96] leading-relaxed">
                   {card.description}
                 </p>
               </div>
@@ -110,7 +109,6 @@ const WhoWeAre = () => {
               </span>
             </motion.article>
           ))}
-        </div>
       </div>
     </section>
   );

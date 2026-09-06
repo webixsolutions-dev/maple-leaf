@@ -6,15 +6,18 @@ import { HOME_SERVICE_ICONS } from '../homeServicesAssets';
 import { CHILD_CARE_IMAGES } from './childCareServicesAssets';
 
 const ChildCareHero = () => (
-  <section
-    className="relative overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat min-h-[320px] sm:min-h-[360px] lg:min-h-[400px]"
-    style={{ backgroundImage: `url('${CHILD_CARE_IMAGES.hero}')` }}
-  >
+  <section className="relative overflow-hidden rounded-3xl bg-[#faf8f5] lg:bg-transparent lg:min-h-[400px] flex flex-col lg:block">
+    <div
+      className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('${CHILD_CARE_IMAGES.hero}')` }}
+      aria-hidden="true"
+    />
+
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
-      className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col justify-center max-w-full md:max-w-[52%] min-h-[320px] sm:min-h-[360px] lg:min-h-[400px]"
+      className="relative z-10 px-6 pt-6 pb-0 sm:px-8 sm:pt-8 sm:pb-0 lg:p-10 flex flex-col justify-center max-w-full md:max-w-[52%] lg:min-h-[400px] lg:bg-transparent"
     >
       <Link
         to="/our-services"
@@ -50,6 +53,12 @@ const ChildCareHero = () => (
         grow, and thrive.
       </p>
     </motion.div>
+
+    <img
+      src={CHILD_CARE_IMAGES.hero}
+      alt="Child receiving nurturing care at home"
+      className="lg:hidden w-full aspect-[5/4] sm:aspect-[16/10] object-cover object-right block shrink-0 leading-none"
+    />
   </section>
 );
 
