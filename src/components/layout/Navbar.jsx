@@ -8,8 +8,8 @@ const Navbar = () => {
   const [programsDropdown, setProgramsDropdown] = useState(false);
   const location = useLocation();
 
-  const isHomePage = location.pathname === '/';
-  const currentLogo = isHomePage ? '/homelogo.PNG' : logo;
+  const isServicesPage = location.pathname === '/our-services';
+  const currentLogo = isServicesPage ? '/homelogo.PNG' : logo;
 
   const navLinks = [
     { path: '/', label: 'Home' },

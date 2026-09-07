@@ -5,8 +5,6 @@ import {
   FaClock,
   FaInstagram,
   FaFacebookF,
-  FaPinterest,
-  FaYoutube,
 } from 'react-icons/fa';
 import { CONTACT } from '../data/contactInfo';
 import logo from '../../assets/logo.png';
@@ -30,8 +28,6 @@ const homecareServices = [
 const socialLinks = [
   { label: 'Facebook', href: CONTACT.facebook, Icon: FaFacebookF },
   { label: 'Instagram', href: CONTACT.instagram, Icon: FaInstagram },
-  { label: 'Pinterest', href: CONTACT.pinterest, Icon: FaPinterest },
-  { label: 'YouTube', href: CONTACT.youtube, Icon: FaYoutube },
 ];
 
 const FooterLogo = () => (
