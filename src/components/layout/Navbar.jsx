@@ -38,7 +38,7 @@ const Navbar = () => {
             <img 
               src={currentLogo} 
               alt={currentLogoAlt} 
-              className="h-20 w-60 object-contain sm:h-16 sm:w-auto md:h-20 md:w-auto"
+              className="h-16 w-auto max-w-[180px] object-contain object-left sm:h-16 sm:w-auto sm:max-w-none md:h-20 md:w-auto"
             />
           </Link>
 
