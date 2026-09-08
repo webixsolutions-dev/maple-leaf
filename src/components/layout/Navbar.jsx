@@ -1,15 +1,12 @@
 import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
-import logo from '../../assets/logo.png';
+import { useBrandingLogo } from '../data/branding';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [programsDropdown, setProgramsDropdown] = useState(false);
-  const location = useLocation();
-
-  const isServicesPage = location.pathname === '/our-services';
-  const currentLogo = isServicesPage ? '/homelogo.PNG' : logo;
+  const { logoSrc: currentLogo, logoAlt: currentLogoAlt } = useBrandingLogo();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -40,7 +37,7 @@ const Navbar = () => {
           <Link to="/" className="flex-shrink-0">
             <img 
               src={currentLogo} 
-              alt="Maple Leaf Montessori Logo" 
+              alt={currentLogoAlt} 
               className="h-20 w-60 object-contain sm:h-16 sm:w-auto md:h-20 md:w-auto"
             />
           </Link>

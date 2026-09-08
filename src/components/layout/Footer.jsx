@@ -7,7 +7,7 @@ import {
   FaFacebookF,
 } from 'react-icons/fa';
 import { CONTACT } from '../data/contactInfo';
-import logo from '../../assets/logo.png';
+import { useBrandingLogo } from '../data/branding';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -30,17 +30,19 @@ const socialLinks = [
   { label: 'Instagram', href: CONTACT.instagram, Icon: FaInstagram },
 ];
 
-const FooterLogo = () => (
+const FooterLogo = ({ logoSrc, logoAlt }) => (
   <Link to="/" className="inline-block flex-shrink-0">
     <img
-      src={logo}
-      alt="Maple Leaf Montessori Logo"
+      src={logoSrc}
+      alt={logoAlt}
       className="h-28 sm:h-32 md:h-36 w-auto object-contain max-w-[280px] md:max-w-[320px]"
     />
   </Link>
 );
 
 const Footer = () => {
+  const { logoSrc: currentLogo, logoAlt: currentLogoAlt } = useBrandingLogo();
+
   return (
     <footer className="font-montserrat mt-auto">
       <div className="bg-white border-t border-gray-100">
@@ -48,7 +50,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {/* Logo */}
             <div>
-              <FooterLogo />
+              <FooterLogo logoSrc={currentLogo} logoAlt={currentLogoAlt} />
             </div>
 
             {/* Quick Links */}
