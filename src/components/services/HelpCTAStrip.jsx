@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaCalendarCheck } from 'react-icons/fa';
 import HomeServiceIcon from './HomeServiceIcon';
 import { CONTACT } from '../data/contactInfo';
 const fadeUp = {
@@ -62,16 +60,6 @@ const HelpCTAStrip = ({ variant = 'default' }) => {
         >
           {CONTACT.email}
         </a>
-      </div>
-
-      <div className="shrink-0">
-        <Link
-          to="/book-tour"
-          className="inline-flex items-center gap-2 bg-[#c72a7a] hover:bg-[#b0256e] text-white font-semibold text-sm px-5 sm:px-6 py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg whitespace-nowrap"
-        >
-          <FaCalendarCheck className="text-sm" />
-          Book a Free Consultation
-        </Link>
       </div>
     </div>
   </motion.section>

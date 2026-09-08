@@ -12,15 +12,23 @@ const VisionMissionSection = () => (
   <motion.section
     {...fadeUp}
     transition={{ duration: 0.6 }}
-    className="relative overflow-hidden rounded-3xl bg-[#faf8f5] lg:bg-transparent flex flex-col lg:block"
+    className="relative overflow-hidden rounded-3xl min-h-[380px] sm:min-h-[420px] lg:min-h-0"
   >
+    {/* Mobile & tablet: background image behind content */}
+    <div
+      className="lg:hidden absolute inset-0 bg-cover bg-no-repeat bg-right"
+      style={{ backgroundImage: `url('${HOME_SERVICE_IMAGES.visionMissionBackground}')` }}
+      aria-hidden="true"
+    />
+
+    {/* Desktop: background image */}
     <div
       className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url('${HOME_SERVICE_IMAGES.visionMissionBackground}')` }}
       aria-hidden="true"
     />
 
-    <div className="relative z-10 px-6 pt-6 pb-0 sm:px-8 sm:pt-8 sm:pb-0 lg:p-10 grid md:grid-cols-2 gap-8 md:gap-12">
+    <div className="relative z-10 px-6 py-8 sm:px-8 sm:py-10 lg:p-10 grid md:grid-cols-2 gap-8 md:gap-12">
       <div className="md:pr-8">
         <div className="flex items-start gap-3 mb-3">
           <HomeServiceIcon
@@ -54,13 +62,6 @@ const VisionMissionSection = () => (
         </p>
       </div>
     </div>
-
-    <img
-      src={HOME_SERVICE_IMAGES.visionMissionBackground}
-      alt=""
-      aria-hidden="true"
-      className="lg:hidden w-full aspect-[5/4] sm:aspect-[16/10] object-cover object-right block shrink-0 leading-none"
-    />
   </motion.section>
 );
 

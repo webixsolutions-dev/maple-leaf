@@ -5,9 +5,7 @@ import {
   FaSun,
   FaHeart,
   FaHome,
-  FaPhoneAlt,
 } from 'react-icons/fa';
-import { CONTACT } from '../data/contactInfo';
 
 const ContactHero = () => {
   return (
@@ -55,13 +53,6 @@ const ContactHero = () => {
               <FaHome className="text-lg flex-shrink-0" />
               <span>Avail Homecare Services</span>
             </Link>
-            <a
-              href={`tel:${CONTACT.phoneTel}`}
-              className="bg-white hover:bg-pink-50 border-2 border-[#E0115F] text-[#E0115F] px-5 sm:px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all shadow-xs flex-1 sm:flex-none whitespace-nowrap"
-            >
-              <FaPhoneAlt className="text-lg flex-shrink-0" />
-              <span>Call Us</span>
-            </a>
             <FaHeart className="text-pink-400 text-xl hidden sm:block absolute -right-2 bottom-0" />
           </div>
         </div>
@@ -75,7 +66,7 @@ const ContactHero = () => {
               className="w-full h-auto object-cover rounded-2xl"
             />
 
-            <div className="absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex flex-col items-start gap-0.5">
+            <div className="hidden sm:flex absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex-col items-start gap-0.5">
               <p className="text-[#E0115F] font-extrabold text-sm leading-tight">
                 Respect
               </p>

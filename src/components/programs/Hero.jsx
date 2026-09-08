@@ -103,7 +103,7 @@ const ProgramsHero = () => {
                 className="w-full h-auto object-cover rounded-2xl"
               />
 
-              <div className="absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex flex-col items-start gap-0.5">
+              <div className="hidden sm:flex absolute top-4 right-4 bg-white rounded-2xl px-4 py-3 shadow-md flex-col items-start gap-0.5">
                 <p className="text-[#E0115F] font-extrabold text-sm leading-tight">
                   Respect
                 </p>
