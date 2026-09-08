@@ -1,29 +1,17 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { useBrandingLogo } from '../data/branding';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [programsDropdown, setProgramsDropdown] = useState(false);
   const { logoSrc: currentLogo, logoAlt: currentLogoAlt } = useBrandingLogo();
 
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/our-services', label: 'Our Services' },
-    { 
-      path: '/programs',
-      label: 'Programs', 
-      dropdown: true,
-      items: [
-        { path: '/programs/infant', label: 'Infant Program (Phase 4)' },
-        { path: '/programs/toddler', label: 'Toddler Program (2-3 Years)' },
-        { path: '/programs/preschool', label: 'Preschool / Montessori Casa' },
-        { path: '/programs/after-school', label: 'Before & After School Care' },
-        { path: '/programs/summer', label: 'Summer Programs & Camps' },
-      ]
-    },
+    { path: '/programs', label: 'Programs' },
     { path: '/admissions', label: 'Admissions' },
     { path: '/contact', label: 'Contact Us' },
   ];
@@ -45,61 +33,17 @@ const Navbar = () => {
           {/* Desktop Menu - Centered */}
           <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
             {navLinks.map((link, index) => (
-              <div
+              <NavLink
                 key={index}
-                className="relative group"
-                onMouseEnter={link.dropdown ? () => setProgramsDropdown(true) : undefined}
-                onMouseLeave={link.dropdown ? () => setProgramsDropdown(false) : undefined}
+                to={link.path}
+                className={({ isActive }) =>
+                  `text-gray-700 hover:text-[#c72a7a] font-medium transition-colors duration-300 relative group
+                  ${isActive ? 'text-[#c72a7a]' : ''}`
+                }
               >
-                {link.dropdown ? (
-                  <NavLink
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `flex items-center gap-1 font-medium transition-colors duration-300 relative group
-                      ${isActive ? 'text-[#c72a7a]' : 'text-gray-700 hover:text-[#c72a7a]'}`
-                    }
-                  >
-                    <span>{link.label}</span>
-                    <FaChevronDown className={`text-xs transition-transform duration-300 ${
-                      programsDropdown ? 'rotate-180' : ''
-                    }`} />
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
-                  </NavLink>
-                ) : (
-                  <NavLink
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `text-gray-700 hover:text-[#c72a7a] font-medium transition-colors duration-300 relative group
-                      ${isActive ? 'text-[#c72a7a]' : ''}`
-                    }
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
-                  </NavLink>
-                )}
-
-                {/* Programs Dropdown Menu */}
-                {link.dropdown && (
-                  <div
-                    className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl py-2 border border-gray-100 transition-all duration-300 ${
-                      programsDropdown 
-                        ? 'opacity-100 visible translate-y-0' 
-                        : 'opacity-0 invisible -translate-y-2'
-                    }`}
-                  >
-                    {link.items.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        to={item.path}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-[#c72a7a] transition-colors"
-                        onClick={() => setProgramsDropdown(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c72a7a] transition-all duration-300 group-hover:w-full"></span>
+              </NavLink>
             ))}
           </div>
 
@@ -117,47 +61,17 @@ const Navbar = () => {
           <div className="md:hidden pb-4 border-t border-gray-100">
             <div className="flex flex-col gap-2 pt-4">
               {navLinks.map((link, index) => (
-                <div key={index}>
-                  {link.dropdown ? (
-                    <details className="group">
-                      <summary className="flex items-center justify-between cursor-pointer text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50">
-                        <NavLink
-                          to={link.path}
-                          className={({ isActive }) =>
-                            isActive ? 'text-[#c72a7a]' : ''
-                          }
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {link.label}
-                        </NavLink>
-                        <FaChevronDown className="text-xs group-open:rotate-180 transition-transform" />
-                      </summary>
-                      <div className="pl-4 mt-1 space-y-1">
-                        {link.items.map((item, idx) => (
-                          <Link
-                            key={idx}
-                            to={item.path}
-                            className="block text-sm text-gray-600 hover:text-[#c72a7a] hover:bg-pink-50 px-3 py-2 rounded-lg transition-colors"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </details>
-                  ) : (
-                    <NavLink
-                      to={link.path}
-                      className={({ isActive }) =>
-                        `block text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50
-                        ${isActive ? 'text-[#c72a7a] bg-pink-50' : ''}`
-                      }
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </NavLink>
-                  )}
-                </div>
+                <NavLink
+                  key={index}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `block text-gray-700 hover:text-[#c72a7a] font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-pink-50
+                    ${isActive ? 'text-[#c72a7a] bg-pink-50' : ''}`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
               ))}
             </div>
           </div>
