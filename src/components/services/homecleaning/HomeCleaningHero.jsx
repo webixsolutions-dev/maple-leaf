@@ -8,8 +8,8 @@ import { HOME_CLEANING_IMAGES } from './homeCleaningServicesAssets';
 const HomeCleaningHero = () => (
   <section className="relative overflow-hidden rounded-3xl bg-[#faf8f5] lg:bg-transparent lg:min-h-[400px] flex flex-col lg:block">
     <div
-      className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('${HOME_CLEANING_IMAGES.hero}')` }}
+      className="hidden lg:block absolute inset-0 bg-cover bg-no-repeat"
+      style={{ backgroundImage: `url('${HOME_CLEANING_IMAGES.hero}')`, backgroundPosition: 'right center' }}
       aria-hidden="true"
     />
 
