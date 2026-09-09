@@ -30,18 +30,22 @@ const socialLinks = [
   { label: 'Instagram', href: CONTACT.instagram, Icon: FaInstagram },
 ];
 
-const FooterLogo = ({ logoSrc, logoAlt }) => (
+const FooterLogo = ({ logoSrc, logoAlt, logoClassName }) => (
   <Link to="/" className="inline-block flex-shrink-0">
     <img
       src={logoSrc}
       alt={logoAlt}
-      className="h-28 sm:h-32 md:h-36 w-auto object-contain max-w-[280px] md:max-w-[320px]"
+      className={logoClassName}
     />
   </Link>
 );
 
 const Footer = () => {
-  const { logoSrc: currentLogo, logoAlt: currentLogoAlt } = useBrandingLogo();
+  const {
+    logoSrc: currentLogo,
+    logoAlt: currentLogoAlt,
+    footerLogoClassName,
+  } = useBrandingLogo();
 
   return (
     <footer className="font-montserrat mt-auto">
@@ -50,7 +54,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {/* Logo */}
             <div>
-              <FooterLogo logoSrc={currentLogo} logoAlt={currentLogoAlt} />
+              <FooterLogo
+                logoSrc={currentLogo}
+                logoAlt={currentLogoAlt}
+                logoClassName={footerLogoClassName}
+              />
             </div>
 
             {/* Quick Links */}

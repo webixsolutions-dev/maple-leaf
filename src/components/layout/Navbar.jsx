@@ -5,7 +5,11 @@ import { useBrandingLogo } from '../data/branding';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { logoSrc: currentLogo, logoAlt: currentLogoAlt } = useBrandingLogo();
+  const {
+    logoSrc: currentLogo,
+    logoAlt: currentLogoAlt,
+    navbarLogoClassName,
+  } = useBrandingLogo();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -26,7 +30,7 @@ const Navbar = () => {
             <img 
               src={currentLogo} 
               alt={currentLogoAlt} 
-              className="h-16 w-auto max-w-[180px] object-contain object-left sm:h-16 sm:w-auto sm:max-w-none md:h-20 md:w-auto"
+              className={navbarLogoClassName}
             />
           </Link>
 
