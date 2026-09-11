@@ -84,7 +84,7 @@ const ContactForm = () => {
     } catch (submitError) {
       setError(
         submitError.message ||
-          'Something went wrong while sending your inquiry. Please try again or email us directly at Mapleleafmontessori11@gmail.com.',
+          `Something went wrong while sending your inquiry. Please try again or email us directly at ${CONTACT.email}.`,
       );
     } finally {
       setIsSubmitting(false);
